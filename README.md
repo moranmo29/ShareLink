@@ -1,6 +1,4 @@
-# ShareLink 
-
-![Logo](http://upng.co.il/uploads/bbd88ec719a0e1076d3b6b236f8efe4e.png)
+# ShareLink ![Logo](http://upng.co.il/uploads/bbd88ec719a0e1076d3b6b236f8efe4e.png)
 
 
 Network application that will store the user links to relevant sites. The application allows you to send links to a single user or groups, as well as quick access of Links relevant to the user.
