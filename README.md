@@ -7,4 +7,9 @@ This app helps the user in:
 - saving sites that the user frequently use and keeping sites that intresting us.
 
 
-# team: 
+# team
+  -adi greenshpan
+  -liran harari
+  -moran mor yosef
+  -shiran mor yosef
+
