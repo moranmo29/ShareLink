@@ -7,6 +7,9 @@ This app helps the user in:
 - saving sites that the user frequently use and keeping sites that intresting us.
 
 
+[ Project idea document](https://www.dropbox.com/s/od0sxnvmsic7szw/%D7%94%D7%92%D7%93%D7%A8%D7%AA%20%D7%94%D7%9E%D7%95%D7%A6%D7%A8.pdf?dl=0)
+
+
 # team
 - Adi Greenshpan
 - Liran Harari
