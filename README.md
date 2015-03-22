@@ -8,8 +8,8 @@ This app helps the user in:
 
 
 # team
--adi greenshpan
--liran harari
--moran mor yosef
--shiran mor yosef
+- adi greenshpan
+- liran harari
+- moran mor yosef
+- shiran mor yosef
 
