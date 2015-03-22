@@ -1,6 +1,6 @@
 # ShareLink 
 
-![Logo](https://www.dropbox.com/lightbox/home/ShareLink)
+![alt tag](https://www.dropbox.com/lightbox/home/ShareLink)
 
 
 Network application that will store the user links to relevant sites. The application allows you to send links to a single user or groups, as well as quick access of Links relevant to the user.
