@@ -16,4 +16,4 @@ This app helps the user in:
 - Liran Harari
 - Moran Mor Yosef
 - Shiran Mor Yosef
-
+-Daniel Korkotyan
