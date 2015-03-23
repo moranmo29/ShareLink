@@ -11,7 +11,7 @@ This app helps the user in:
 
 [ Project presentation document](https://www.dropbox.com/s/wv71w8iv3dh41ft/shareLink.pptx?dl=0)
 
-# team
+# [Team](https://github.com/moranmo29/ShareLink/wiki/Team)
 - Adi Greenshpan
 - Liran Harari
 - Moran Mor Yosef
