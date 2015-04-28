@@ -1,1 +1,1 @@
-This folder will contain all the static page,css,js and pictures.
+this folder will contain the web code
