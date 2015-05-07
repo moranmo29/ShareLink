@@ -6057,9 +6057,6 @@ a {
   -o-transition: all 200ms ease-in;
   transition: all 200ms ease-in;
 }
-a:hover {
-  color: #e84c3d;
-}
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Open Sans", Arial, sans-serif;
@@ -6885,6 +6882,7 @@ ul.follow-us li a i {
   .product-item-2 .product-content p {
     display: none;
   }
+
 
   
 }
