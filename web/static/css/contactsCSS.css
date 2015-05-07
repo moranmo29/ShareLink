@@ -1,6 +1,6 @@
 * { padding:0; margin:0; 
 }
-ul {list-style:none;}
+
 .clear {
 	clear:both;
 	line-height: 0px;
@@ -9,42 +9,18 @@ ul {list-style:none;}
 	font-size: 0px;
 	height: 0px;
 }
-#loginform p {
-	line-height: 14px;
-}
-body {background:#fff; font:11px Verdana, Arial, Helvetica, sans-serif; color:#333;}
-#wrap {width:948px; margin:auto;}
-#topbar {background:url(../images/topbar.jpg) no-repeat; height:37px;}
-#header {background:url(../images/headerbg.jpg) repeat-x; height:128px; margin:0 2px 0 2px;}
-#content {padding:0 2px 0 2px;}
-#home_main, #main {width:545px; float:left; margin-bottom:8px;}
-#home_sidebar, #sidebar { width:390px; float:right; margin-bottom:8px;}
-h1#logo { font: bold 48px Tahoma, Geneva, sans-serif; color:#368291;}
-#content #sidebar {
-	background: url(../images/hotbg.jpg) repeat;
-}
 
 .ContactArticle {
 	float: left;
 }
 
 
-
-#ContactMain h1 {
-	background: url(../images/mainh2bg.jpg);
-	font: bold 18px "Trebuchet MS", Arial, sans-serif;
-	color: #000000;
-	padding: 5px;
-	margin-bottom: 5px;
-	float: center;
-}
 .listing {
 }
 .listing li {
 	display: block;
 	padding: 10px;
 	margin-bottom: 8px;
-	background: #f8f8f8;
 	border: 1px solid #eee;
 	height: 76px;
 }
@@ -95,25 +71,23 @@ h1#logo { font: bold 48px Tahoma, Geneva, sans-serif; color:#368291;}
 	padding-bottom: 10px;
 }
 .listingbtns .listbuttons a {
-	color: #F3F0DF;
+	color: #fff;
 	text-decoration: none;
 }
 
 .price {
 	display: block;
 	font-weight: bold;
-	color: #0099CC;
+	color: #fff;
 }
 .listingbtns .listbuttons a:visited, .listingbtns .listbuttons a:active, .listingbtns .listbuttons a:hover {
-	color: #F3F0DF;
+	color: #fff;
 	text-decoration: none;
 }
 .block {
 	padding: 5px;
 }
-a {
-	color: #006600;
-}
+
 .normalmenu li {
 	display: block;
 	height: 32px;
@@ -227,12 +201,7 @@ a {
 .hot .description .price {
 	padding-top: 5px;
 }
-h1 a, h2 a, h3 a {
-	text-decoration: none;
-}
-h3 a:hover {
-	color: #000000;
-}
+
 .hot li {
 	display: block;
 	padding-top: 3px;
@@ -259,28 +228,7 @@ h3 a:hover {
 	display: inline;
 	font: bold 16px "Trebuchet MS", Verdana, Arial, sans-serif;
 }
-#topcategorieslink a {
-	display: block;
-	color: #4B7792;
-	text-decoration: none;
-	height: 23px;
-	padding-top: 2px;
-	padding-right: 11px;
-	padding-left: 8px;
-	border-right: 1px solid #9AB5BE;
-	float: left;
-}
-#topcategorieslink a:hover {
-	display: block;
-	color: #000000;
-	text-decoration: none;
-	height: 23px;
-	padding-top: 2px;
-	padding-right: 11px;
-	padding-left: 8px;
-	border-right: 1px solid #9AB5BE;
-	float: left;
-}
+
 #footer #upperfooter {
 	padding-top: 25px;
 	padding-left: 250px;
@@ -302,21 +250,14 @@ h3 a:hover {
 	color: #E3F4FB;
 	text-decoration: none;
 }
-#lowerfooter a {
-	color: #DFF6FC;
-	text-decoration: none;
-}
+
 #topcategorieslink #searchagain {
 	float: left;
 	width: 715px;
 	padding-top: 2px;
 }
-a img {
-	border-style: none;
-}
-a.highlight {
-	color: #CC0000!important;
-}
+
+
 .smsalert {
 	background: #3F3F3F;
 	margin-bottom: 5px;
@@ -329,30 +270,13 @@ a.highlight {
 #paginations li {
 	display: inline;
 }
-#wrap #content #main #paginations a {
-	display: block;
-	float: left;
-	text-align: center;
-	height: 20px;
-	width: 25px;
-	padding-top: 5px;
-	margin-right: 5px;
-	color: #000000;
-	text-decoration: none;
-	background: #A5A192;
-}
+
 #main #paginations {
 	background: #404040;
 	padding: 5px;
 }
-#wrap #content #main #paginations .current a {
-	color: #FFFFFF;
-	background: #000000;
-}
-#wrap #content #main #paginations a:hover {
-	color: #FFFFFF;
-	background: #000000;
-}
+
+
 #main #single_item_details {
 	background: #f8f8f8;
 }
@@ -432,12 +356,3 @@ a.highlight {
 	padding-top: 10px;
 	margin-left: 15px;
 }
-.imagegallink a {
-	display: block;
-	font: bold 18px "Trebuchet MS", Verdana, Arial, sans-serif;
-	text-transform: uppercase;
-	color: #903F00;
-	text-decoration: none;
-}
-.hiddentab a {display:inline!important;}
-.hiddentab a:hover {color:#000!important;}
