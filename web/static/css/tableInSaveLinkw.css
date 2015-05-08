@@ -1,0 +1,50 @@
+
+th:first-child {
+	border-left: 1px solid #777;	
+	box-shadow: inset 1px 1px 0 #999;
+	width:190%;
+}
+td:first-child {
+	box-shadow: inset 1px 0 0 #fff;
+	width:190%
+}	
+input, select, textarea {
+                background: none repeat scroll 0 0 #fafafa;
+                border: 1px solid #eeeeee;
+                color: #5e5e5e;
+                display: block;
+                font-family: arial, sans-serif;
+                font-size: inherit;
+                padding: 10px;
+                width: 100%;
+                box-sizing: border-box;
+                font-size: 16px;
+                margin: 0;
+                height: 40px;
+            }
+            
+            #searchtext {
+                overflow: hidden;
+            }
+            
+            a.search-submit-button {
+                background: none repeat scroll 0 0 #fafafa;
+                border-bottom: 1px solid #eeeeee;
+                border-right: 1px solid #eeeeee;
+                border-top: 1px solid #eeeeee;
+                color: #5e5e5e !important;
+                display: block;
+                float: right;
+                font-family: inherit;
+                font-size: 20px;
+                padding: 8px 10px;
+                text-align: center;
+                width: 45px;
+                box-sizing: border-box;
+                height: 40px;
+            }
+            
+            #form-container {
+                /* width: 60%; */
+            }
+            
