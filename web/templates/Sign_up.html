@@ -17,10 +17,9 @@ http://www.templatemo.com/preview/templatemo_428_kool_store
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../static/css/tableInNewLinks.css">
 
 
-	<script src="../static/js/masterPJS.js"></script>
+	<script src="js/vendor/modernizr-2.6.2.min.js"></script>
 
 </head>
 <body>
@@ -35,8 +34,11 @@ http://www.templatemo.com/preview/templatemo_428_kool_store
                 <div class="row">
                     <div class="col-md-6 col-sm-6">
                         <div class="top-header-left">
-                            <a href="Sign_up.html">Sign Up</a>
-                            <a id="login_prompt" href="#" onclick="sing_in_prompt()">Log In</a>
+							<form id="logInField">
+								<a href="#">Sign Up</a>
+							
+								<a id="login" href="javascript:;">Log In</a>
+							</form>
                         </div> <!-- /.top-header-left -->
                     </div> <!-- /.col-md-6 -->
                   
@@ -60,7 +62,6 @@ http://www.templatemo.com/preview/templatemo_428_kool_store
             </div> <!-- /.container -->
         </div> <!-- /.main-header -->
         <div class="main-nav">
-		
             <div class="container">
                 <div class="row" >
                     <div class="col-md-6 col-sm-7">
@@ -87,86 +88,78 @@ http://www.templatemo.com/preview/templatemo_428_kool_store
 	   <div class="container">
 	  <div class="content">
     <div class="content_resize">
+     
+	 
 		<div class="mainbar">
-	<table>
-  <thead>
-    <tr>
-      <th>From</th>
-      <th>Description</th>
-      <th>Link</th>
-	  <th/>
-	  </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>moranmo</strong></td>
-      <td>Top 10 CSS Table Design</td>
-      <td><a href="http://codepen.io/anon/pen/bdVyMa" target="_blank">http://codepen.io/anon/pen/bdVyMa</a></td>
-	  <td>
-			<div class="listingbtns">
-				<span class="listbuttons">
-					<a href="#">SaveLink</a></span>
-				<span class="listbuttons">
-					<a href="#">Delete</a></span>
-			</div>
-		</td>
-    </tr>
-    <tr>
-      <td><strong>moranmo</strong></td>
-      <td></td>
-      <td><a href="http://www.w3.org/Style/Examples/007/evenodd" 
-	  target="_blank">http://www.w3.org/Style/Examples/007/evenodd</td>
-	  <td>
-			<div class="listingbtns">
-				<span class="listbuttons">
-					<a href="#">SaveLink</a></span>
-				<span class="listbuttons">
-					<a href="#">Delete</a></span>
-			</div>
-		</td>
-    </tr>
-    <tr>
-      <td><strong>liranharari</strong></td>
-      <td>stackoverflow</td>
-      <td><a href="http://stackoverflow.com/questions/19/what-is-the-fastest-way-to-get-the-value-of-%CF%80" target="_blank">http://stackoverflow.com/questions/19/what-is-the-fastest-way-to-get-the-value-of-%CF%80</a></td>
-      <td>
-			<div class="listingbtns">
-				<span class="listbuttons">
-					<a href="#">SaveLink</a></span>
-				<span class="listbuttons">
-					<a href="#">Delete</a></span>
-			</div>
-		</td>
-	</tr>
-    <tr>
-      <td><strong>avitol</strong></td>
-      <td>in this link have a lot of Examples</td>
-      <td><a href="http://www.w3schools.com" target="_blank">http://www.w3schools.com</a></td>
-	  <td>
-			<div class="listingbtns">
-				<span class="listbuttons">
-					<a href="#">SaveLink</a></span>
-				<span class="listbuttons">
-					<a href="#">Delete</a></span>
-			</div>
-		</td>
-	</tr>	
-	<tr>
-      <td><strong>daniel</strong></td>
-      <td>create button</td>
-      <td><a href="http://css3buttongenerator.com/" target="_blank">http://css3buttongenerator.com/</a></td>
-	  <td>
-			<div class="listingbtns">
-				<span class="listbuttons">
-					<a href="#">SaveLink</a></span>
-				<span class="listbuttons">
-					<a href="#">Delete</a></span>
-			</div>
-		</td>
-	</tr>	
-  </tbody>
-</table>
-</div>
+			<table border="0" style="width:400px; height:200px; font-size:120%;">
+			
+			<!-- =============USERNAME=================== -->
+				<tr>
+					<td>
+						Username:
+					</td>
+					
+					<td>
+						<input type="username" name="username" size="25">
+					</td>
+				</tr>
+				
+			<!-- =============PASSWORD=================== -->
+				<tr>
+					<td>
+						Password:
+					</td>
+					
+					<td>
+						<input type="password" name="password" size="25">
+					</td>
+				</tr>
+					
+			<!-- =============EMAIL=================== -->
+				<tr>
+					<td>
+						Email:
+					</td>
+					
+					<td>
+						<input type="email" name="email" size="25">
+					</td>
+				</tr>
+					
+			<!-- =============FISRT NAME=================== -->
+				<tr>
+					<td>
+						Fisrt Name:
+					</td>
+					
+					<td>
+						<input type="name" name="fName" size="25">
+					</td>
+				</tr>
+				
+			<!-- =============LAST NAME=================== -->
+				<tr>
+					<td>
+						Last Name:
+					</td>
+					
+					<td>
+						<input type="name" name="lName" size="25">
+					</td>
+				</tr>
+				
+				
+				<tr>
+					<td colspan="2">
+						<button type="button" style="border:0px; color:white; background-color:#2a80b9; margin-left:130px; margin-top:10px;">Sing Up</button>
+					</td>
+				</tr>
+			</table>
+		</div>
+	 
+	 
+	 
+	 
       <div class="sidebar">
         <div class="clr"></div>
         <div class="gadget">
@@ -227,6 +220,8 @@ http://www.templatemo.com/preview/templatemo_428_kool_store
     <script src="js/bootstrap.js"></script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
+	
+	<script src="../static/js/masterPJS.js"></script>
 
 
 </body>
