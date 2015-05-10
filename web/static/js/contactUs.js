@@ -1,5 +1,6 @@
+
 function successAlert() {
-    window.alert("The message sent successfully");
+	alert("The message sent successfully");
 	
 	
 }
