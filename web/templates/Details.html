@@ -17,8 +17,11 @@ http://www.templatemo.com/preview/templatemo_428_kool_store
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet">
 
     <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+ <link rel="stylesheet" type="text/css" href="../static/css/modal.css"> <!-- login box-->
 
-
+<script type="text/javascript" src="../static/js/jquery-1.9.1.min.js"></script> <!-- login box-->
+  <script type="text/javascript" charset="utf-8" src="../static/js/jquery.leanModal.min.js"></script> <!-- login box-->
+	
 	<script src="../static/js/masterPJS.js"></script>
 
 </head>
@@ -35,7 +38,7 @@ http://www.templatemo.com/preview/templatemo_428_kool_store
                     <div class="col-md-6 col-sm-6">
                         <div class="top-header-left">
                             <a href="Sign_up.html">Sign Up</a>
-                            <a id="login_prompt" href="#" onclick="sing_in_prompt()">Log In</a>
+                            <a id="modaltrigger" href="#loginmodal" class="flatbtn">Log In</a>  <!-- onclick="sing_in_prompt()" -->
                         </div> <!-- /.top-header-left -->
                     </div> <!-- /.col-md-6 -->
                   
@@ -80,6 +83,24 @@ http://www.templatemo.com/preview/templatemo_428_kool_store
     </header> <!-- /.site-header -->
 	
 
+	<!-- login box -->
+			
+											<div id="loginmodal" style="display:none;">
+													<br>
+												<form id="loginform" name="loginform" method="post" action="index.html">
+													<h2><small><center>login</center></small></h2>
+													
+													<input type="text" name="username" id="username" class="txtfield" tabindex="1" style="width:200px; height:35px;" placeholder="Username">
+										  
+													<input type="password" name="password" id="password" class="txtfield" tabindex="2" style="width:200px; height:35px;" placeholder="Password">
+										  
+													<div class="center"><input type="submit" name="loginbtn" id="loginbtn" class="myButton" value="Log In" tabindex="3" style="float:center; width:200px; height:35px;">
+														</div>
+												</form>
+											</div>
+											
+			
+			<!-- end login box -->
 
 	<div class="content-section">
 	   <div class="container">
@@ -180,6 +201,18 @@ http://www.templatemo.com/preview/templatemo_428_kool_store
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
 
-
+<!-- script for login box -->
+	
+	<script type="text/javascript">
+			$(function(){
+			  $('#loginform').submit(function(e){
+				return false;
+			  });
+			  
+			  $('#modaltrigger').leanModal({ top: 110, overlay: 0.45, closeButton: ".hidemodal" });
+			});
+</script>
+	
+	<!-- script for login box -->
 </body>
 </html>
