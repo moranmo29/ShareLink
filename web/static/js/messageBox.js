@@ -7,11 +7,6 @@ angular.module('modalTest',['ui.bootstrap','dialogs'])
     var dlg = null;
     switch(which){
         
-      // Error Dialog
-      case 'error':
-        dlg = $dialogs.error('This is my error message');
-        break;
-        
       // Wait / Progress Dialog
       case 'wait':
         dlg = $dialogs.wait(msgs[i++],progress);
