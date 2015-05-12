@@ -1,254 +1,224 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]><html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-<head>
-<!-- 
-Kool Store Template
-http://www.templatemo.com/preview/templatemo_428_kool_store
--->
-    <meta charset="utf-8">
-    <title>ShareLink</title>
-
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet">
-
-    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="../static/css/contactUsCSS.css">
- <link rel="stylesheet" type="text/css" href="../static/css/modal.css"> <!-- login box-->
-
-<script type="text/javascript" src="../static/js/jquery-1.9.1.min.js"></script> <!-- login box-->
-  <script type="text/javascript" charset="utf-8" src="../static/js/jquery.leanModal.min.js"></script> <!-- login box-->
-	
-	<script src="../static/js/masterPJS.js"></script>
-	<script src="../static/js/ContactUs.js"></script>
-
-</head>
-<body>
-    <!--[if lt IE 7]>
-    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-    <![endif]-->
-
-    
-    <header class="site-header">
-        <div class="top-header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-sm-6">
-                        <div class="top-header-left">
-                            <a href="Sign_up">Sign Up</a>
-                            <a id="modaltrigger" href="#loginmodal" class="flatbtn">Log In</a>  <!-- onclick="sing_in_prompt()" -->
-                        </div> <!-- /.top-header-left -->
-                    </div> <!-- /.col-md-6 -->
-                  
-                </div> <!-- /.row -->
-            </div> <!-- /.container -->
-        </div> <!-- /.top-header -->
-        <div class="main-header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 col-sm-6 col-xs-8">
-                        <div class="logo">
-                            <h1><a href="index">Share-Link</a></h1>
-                        </div> <!-- /.logo -->
-                    </div> <!-- /.col-md-4 -->
-					<div class="col-md-8 col-sm-6 col-xs-4" >
-					  <div class="main-menu">
-						<img src="https://www.imageupload.co.uk/images/2015/04/28/sharelink-iconc0ece.png" width="200" height="200" align="top" style="margin:-50px 0px" />
-					  </div>
-					 </div> <!-- /.col-md-8 -->
-                </div> <!-- /.row -->
-            </div> <!-- /.container -->
-        </div> <!-- /.main-header -->
-        <div class="main-nav">
-            <div class="container">
-                <div class="row" >
-                    <div class="col-md-6 col-sm-7">
-                        <div class="list-menu">
-                            <ul>
-                                <li><a href="index">Home</a></li>
-                                <li><a href="Details">Details</a></li>
-                                <li><a href="contactUsPage">Contact Us</a></li>
-                            </ul>
-                        </div> <!-- /.list-menu -->
-                    </div> <!-- /.col-md-6 -->
-                    <div class="col-md-6 col-sm-5">
-                        <div class="notification">
-                        </div>
-                    </div> <!-- /.col-md-6 -->
-                </div> <!-- /.row -->
-            </div> <!-- /.container -->
-        </div> <!-- /.main-nav -->
-    </header> <!-- /.site-header -->
-	
-<!-- login box -->
-			
-											<div id="loginmodal" style="display:none;">
-													<br>
-												<form id="loginform" name="loginform" method="post" action="index">
-													<h2><small><center>login</center></small></h2>
-													
-													<input type="text" name="username" id="username" class="txtfield" tabindex="1" style="width:200px; height:35px;" placeholder="Username">
-										  
-													<input type="password" name="password" id="password" class="txtfield" tabindex="2" style="width:200px; height:35px;" placeholder="Password">
-										  
-													<div class="center"><input type="submit" name="loginbtn" id="loginbtn" class="myButton" value="Log In" tabindex="3" style="float:center; width:200px; height:35px;">
-														</div>
-												</form>
-											</div>
-											
-			
-			<!-- end login box -->
-
-	<div class="content-section">
-	   <div class="container">
-	  <div class="content">
-    <div class="content_resize">
-      <div class="mainbar">
-        <div class="ContactArticle">
-          
-				
-				
-				
-				
-				
-				
-				
-							
-							
-							
-				<form name="freecontactform" method="post" action="freecontactformprocess.php" onsubmit="return validate.check(this)">
-				<table width="600px" class="freecontactform">
-				<tr>
-				 <td colspan="2">
-				  
-				 <div class="freecontactformheader">Contact Us</div>
-				  
-				 <div class="freecontactformmessage"style="font-size:15px">Fields marked with <span class="required_star"> * </span> are mandatory.</div>
-				  
-				 </td>
-				</tr>
-				<tr>
-				 <td valign="top">
-				  <label for="Full_Name" class="required" style="font-size:16px">Full Name<span class="required_star"> * </span></label>
-				 </td>
-				 <td valign="top">
-				  <input type="text" name="Full_Name" id="Full_Name" maxlength="80" style="width:230px">
-				 </td>
-				</tr>
-				<tr>
-				 <td valign="top">
-				  <label for="Email_Address" class="required" style="font-size:16px">Email Address<span class="required_star"> * </span></label>
-				 </td>
-				 <td valign="top">
-				  <input type="text" name="Email_Address" id="Email_Address" maxlength="100" style="width:230px">
-				 </td>
-				</tr>
-				
-				<tr>
-				 <td valign="top">
-				  <label for="Your_Message" class="required" style="font-size:16px">Your Message<span class="required_star"> * </span></label>
-				 </td>
-				 <td valign="top">
-				  <textarea style="width:230px;height:160px" name="Your_Message" id="Your_Message" maxlength="2000"></textarea>
-				 </td>
-				</tr>
-				
-				<tr>
-				 <td colspan="2" style="text-align:center" >
-				 <br /><br />
-					<button onclick="successAlert()">Send</button>
-				  <br /><br />
-				  
-				  
-				  
-				  <br /><br />
-				 </td>
-				</tr>
-				</table>
-				</form>
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-		  
-		  
-		  
-		
-        </div>
-      </div>
-	</div>
-      <div class="sidebar">
-        <div class="clr"></div>
-        <div class="gadget">
-          <h2 class="star"><span>Menu</span></h2>
-          <div class="clr"></div>
-          <ul class="ex_menu">
-            <li><a href="MySavedLinks"><h4>My Saved Links</h4></a><br/></li>
-            <li><a href="NewLinks"><h4>New Links</h4></a><br /></li>
-            <li><a href="contactsPage"><h4>My Personal Contact</h4></a><br /></li>
-            <li><a href="MyGroups"><h4>My Groups</h4></a><br /></li>
-
-          </ul>
-        </div>
-      </div>
-      <div class="clr"></div>
-  </div>
-  </div>
-</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
-	
-	<div class="site-footer">
+<!--[if gt IE 8]><!--> 
+<html class="no-js">
+	<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<title>ShareLink</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width">
+		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+		<link rel="stylesheet" type="text/css" href="../static/css/contactUsCSS.css">
+		<link rel="stylesheet" type="text/css" href="../static/css/modal.css">
+		<!-- login box-->
+		<script type="text/javascript" src="../static/js/jquery-1.9.1.min.js"></script> <!-- login box-->
+		<script type="text/javascript" charset="utf-8" src="../static/js/jquery.leanModal.min.js"></script> <!-- login box-->
+		<script src="../static/js/masterPJS.js"></script>
+		<script src="../static/js/ContactUs.js"></script>
+	</head>
+	<body>
+		<!--[if lt IE 7]>
+		<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+		<![endif]-->
+		<header class="site-header">
+			<div class="top-header">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-6 col-sm-6">
+							<div class="top-header-left">
+								<a href="Sign_up">Sign Up</a>
+								<a id="modaltrigger" href="#loginmodal" class="flatbtn">Log In</a>  <!-- onclick="sing_in_prompt()" -->
+							</div>
+							<!-- /.top-header-left -->
+						</div>
+						<!-- /.col-md-6 -->
+						<div class="social-icons">
+							<a id="logout_prompt" href="#" style="float:right" >Log Out</a>
+						</div>
+					</div>
+					<!-- /.row -->
+				</div>
+				<!-- /.container -->
+			</div>
+			<!-- /.top-header -->
+			<div class="main-header">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4 col-sm-6 col-xs-8">
+							<div class="logo">
+								<h1><a href="index">Share-Link</a></h1>
+							</div>
+							<!-- /.logo -->
+						</div>
+						<!-- /.col-md-4 -->
+						<div class="col-md-8 col-sm-6 col-xs-4" >
+							<div class="main-menu">
+								<img src="https://www.imageupload.co.uk/images/2015/04/28/sharelink-iconc0ece.png" width="200" height="200" align="top" style="margin:-50px 0px" />
+							</div>
+						</div>
+						<!-- /.col-md-8 -->
+					</div>
+					<!-- /.row -->
+				</div>
+				<!-- /.container -->
+			</div>
+			<!-- /.main-header -->
+			<div class="main-nav">
+				<div class="container">
+					<div class="row" >
+						<div class="col-md-6 col-sm-7">
+							<div class="list-menu">
+								<ul>
+									<li><a href="index">Home</a></li>
+									<li><a href="Details">Details</a></li>
+									<li><a href="contactUsPage">Contact Us</a></li>
+								</ul>
+							</div>
+							<!-- /.list-menu -->
+						</div>
+						<!-- /.col-md-6 -->
+						<div class="col-md-6 col-sm-5">
+							<div class="notification">
+							</div>
+						</div>
+						<!-- /.col-md-6 -->
+					</div>
+					<!-- /.row -->
+				</div>
+				<!-- /.container -->
+			</div>
+			<!-- /.main-nav -->
+		</header>
+		<!-- /.site-header -->
+		<!-- login box -->
+		<div id="loginmodal" style="display:none;">
+			<br>
+			<form id="loginform" name="loginform" method="post" action="index">
+				<h2>
+					<small>
+						<center>login</center>
+					</small>
+				</h2>
+				<input type="text" name="username" id="username" class="txtfield" tabindex="1" style="width:200px; height:35px;" placeholder="Username">
+				<input type="password" name="password" id="password" class="txtfield" tabindex="2" style="width:200px; height:35px;" placeholder="Password">
+				<div class="center"><input type="submit" name="loginbtn" id="loginbtn" class="myButton" value="Log In" tabindex="3" style="float:center; width:200px; height:35px;">
+				</div>
+			</form>
+		</div>
+		<!-- end login box -->
+		<div class="content-section">
+			<div class="container">
+				<div class="content">
+					<div class="content_resize">
+						<div class="mainbar">
+							<div class="ContactArticle">
+								<form name="freecontactform" method="post" action="freecontactformprocess.php" onsubmit="return validate.check(this)">
+									<table width="600px" class="freecontactform">
+										<tr>
+											<td colspan="2">
+												<div class="freecontactformheader">Contact Us</div>
+												<div class="freecontactformmessage"style="font-size:15px">Fields marked with <span class="required_star"> * </span> are mandatory.</div>
+											</td>
+										</tr>
+										<tr>
+											<td valign="top">
+												<label for="Full_Name" class="required" style="font-size:16px">Full Name<span class="required_star"> * </span></label>
+											</td>
+											<td valign="top">
+												<input type="text" name="Full_Name" id="Full_Name" maxlength="80" style="width:230px">
+											</td>
+										</tr>
+										<tr>
+											<td valign="top">
+												<label for="Email_Address" class="required" style="font-size:16px">Email Address<span class="required_star"> * </span></label>
+											</td>
+											<td valign="top">
+												<input type="text" name="Email_Address" id="Email_Address" maxlength="100" style="width:230px">
+											</td>
+										</tr>
+										<tr>
+											<td valign="top">
+												<label for="Your_Message" class="required" style="font-size:16px">Your Message<span class="required_star"> * </span></label>
+											</td>
+											<td valign="top">
+												<textarea style="width:230px;height:160px" name="Your_Message" id="Your_Message" maxlength="2000"></textarea>
+											</td>
+										</tr>
+										<tr>
+											<td colspan="2" style="text-align:center" >
+												<br /><br />
+												<button onclick="successAlert()">Send</button>
+												<br /><br />
+												<br /><br />
+											</td>
+										</tr>
+									</table>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="sidebar">
+						<div class="clr"></div>
+						<div class="gadget">
+							<h2 class="star"><span>Menu</span></h2>
+							<div class="clr"></div>
+							<ul class="ex_menu">
+								<li>
+									<a href="MySavedLinks">
+										<h4>My Saved Links</h4>
+									</a>
+									<br/>
+								</li>
+								<li>
+									<a href="NewLinks">
+										<h4>New Links</h4>
+									</a>
+									<br />
+								</li>
+								<li>
+									<a href="contactsPage">
+										<h4>My Personal Contact</h4>
+									</a>
+									<br />
+								</li>
+								<li>
+									<a href="MyGroups">
+										<h4>My Groups</h4>
+									</a>
+									<br />
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="clr"></div>
+				</div>
+			</div>
+		</div>
+		<div class="site-footer">
 		<div class="bottom-footer">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-12 text-center">
-                        <span>Copyright &copy; 2015 <a href="#">ShareLink</a> | Design: <a href="http://www.templatemo.com">liranHarri</a></span>
-                        <p>The site is developed as part of course Software engineering in JCE-Jerusalem College Engineering</p>
-                    </div> <!-- /.col-md-12 -->
-                </div> <!-- /.row -->
-            </div> <!-- /.container -->
-        </div> <!-- /.bottom-footer -->
-    </footer> <!-- /.site-footer -->
-
-    
-    <script src="js/vendor/jquery-1.10.1.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-    <script src="js/jquery.easing-1.3.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-<!-- script for login box -->
-	
-	<script type="text/javascript">
+						<span>Copyright &copy; 2015 <a href="#">ShareLink</a> | Design: <a href="http://www.templatemo.com">ShareLink</a></span>
+						<p>The site is developed as part of course Software engineering in JCE-Jerusalem College Engineering</p>
+					</div>
+					<!-- /.col-md-12 -->
+				</div>
+				<!-- /.row -->
+			</div>
+			<!-- /.container -->
+		</div>
+		<!-- /.bottom-footer -->
+		</footer> <!-- /.site-footer -->
+		<script src="js/vendor/jquery-1.10.1.min.js"></script>
+		<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+		<script src="js/jquery.easing-1.3.js"></script>
+		<script src="js/bootstrap.js"></script>
+		<script src="js/plugins.js"></script>
+		<script src="js/main.js"></script>
+		<!-- script for login box -->
+		<script type="text/javascript">
 			$(function(){
 			  $('#loginform').submit(function(e){
 				return false;
@@ -256,9 +226,7 @@ http://www.templatemo.com/preview/templatemo_428_kool_store
 			  
 			  $('#modaltrigger').leanModal({ top: 110, overlay: 0.45, closeButton: ".hidemodal" });
 			});
-</script>
-	
-	<!-- script for login box -->
-
-</body>
+		</script>
+		<!-- script for login box -->
+	</body>
 </html>

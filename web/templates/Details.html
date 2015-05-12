@@ -1,218 +1,235 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]><html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-<head>
-<!-- 
-Kool Store Template
-http://www.templatemo.com/preview/templatemo_428_kool_store
--->
-    <meta charset="utf-8">
-    <title>ShareLink</title>
-
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
-
-    <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet">
-
-    <link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
- <link rel="stylesheet" type="text/css" href="../static/css/modal.css"> <!-- login box-->
-
-<script type="text/javascript" src="../static/js/jquery-1.9.1.min.js"></script> <!-- login box-->
-  <script type="text/javascript" charset="utf-8" src="../static/js/jquery.leanModal.min.js"></script> <!-- login box-->
-	
-	<script src="../static/js/masterPJS.js"></script>
-
-</head>
-<body>
-    <!--[if lt IE 7]>
-    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-    <![endif]-->
-
-    
-    <header class="site-header">
-        <div class="top-header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-6 col-sm-6">
-                        <div class="top-header-left">
-                            <a href="Sign_up">Sign Up</a>
-                            <a id="modaltrigger" href="#loginmodal" class="flatbtn">Log In</a>  <!-- onclick="sing_in_prompt()" -->
-                        </div> <!-- /.top-header-left -->
-                    </div> <!-- /.col-md-6 -->
-                  
-                </div> <!-- /.row -->
-            </div> <!-- /.container -->
-        </div> <!-- /.top-header -->
-        <div class="main-header">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 col-sm-6 col-xs-8">
-                        <div class="logo">
-                            <h1><a href="index">Share-Link</a></h1>
-                        </div> <!-- /.logo -->
-                    </div> <!-- /.col-md-4 -->
-					<div class="col-md-8 col-sm-6 col-xs-4" >
-					  <div class="main-menu">
-						<img src="https://www.imageupload.co.uk/images/2015/04/28/sharelink-iconc0ece.png" width="200" height="200" align="top" style="margin:-50px 0px" />
-					  </div>
-					 </div> <!-- /.col-md-8 -->
-                </div> <!-- /.row -->
-            </div> <!-- /.container -->
-        </div> <!-- /.main-header -->
-        <div class="main-nav">
-            <div class="container">
-                <div class="row" >
-                    <div class="col-md-6 col-sm-7">
-                        <div class="list-menu">
-                            <ul>
-                                <li><a href="index">Home</a></li>
-                                <li><a href="Details">Details</a></li>
-                                <li><a href="contactUsPage">Contact Us</a></li>
-                            </ul>
-                        </div> <!-- /.list-menu -->
-                    </div> <!-- /.col-md-6 -->
-                    <div class="col-md-6 col-sm-5">
-                        <div class="notification">
-                        </div>
-                    </div> <!-- /.col-md-6 -->
-                </div> <!-- /.row -->
-            </div> <!-- /.container -->
-        </div> <!-- /.main-nav -->
-    </header> <!-- /.site-header -->
-	
-
-	<!-- login box -->
-			
-											<div id="loginmodal" style="display:none;">
-													<br>
-												<form id="loginform" name="loginform" method="post" action="index">
-													<h2><small><center>login</center></small></h2>
-													
-													<input type="text" name="username" id="username" class="txtfield" tabindex="1" style="width:200px; height:35px;" placeholder="Username">
-										  
-													<input type="password" name="password" id="password" class="txtfield" tabindex="2" style="width:200px; height:35px;" placeholder="Password">
-										  
-													<div class="center"><input type="submit" name="loginbtn" id="loginbtn" class="myButton" value="Log In" tabindex="3" style="float:center; width:200px; height:35px;">
-														</div>
-												</form>
-											</div>
-											
-			
-			<!-- end login box -->
-
-	<div class="content-section">
-	   <div class="container">
-	  <div class="content">
-    <div class="content_resize">
-	
-	<div class="mainbar">
-	 <h4><p>How the idea was born?</p></h4>
-	 During our Bachelor's degree in "Azrieli, College of Engineering Jerusalem", at Software Engineering,
-	 We used a lot of different links. Every time we sent a link to a friend or group of students,
-	 we use the Email or other similar channels.
-     <br>Over time, we were looking for an easy and convenient way to share links, and succeed to manage the links so we can retrieve them whenever we needed: 
-	 <br>therefore we create <b>ShareLink</b>.
-	 <div class="clr"> </div>
-	 <br><h4><p>What the site offers?</p></h4>
-	 <h5><p>User not registered:</p></h5>
-     <p>A non signed in user can send a link on the <b>'Main-Page'</b> without any registration to any valid email address.</p>
-	 
-    <h5><p>Registered User:</p></h5>
-        <b>My Saved Links page</b> - user can save all the links are important to him.
-        <br><b>New links page</b> - user can see links received from other users.
-                     <br>If the user wants he can:
-					 <br>share the link in the group, move the link to the personal page or delete link.
-	<br><b>Contacts</b> - user can add a contact to his own personal page, and share links.
-               <br>If the user wants he can delete a contact.
-	<br><b>Groups</b> - User can create a group and share links there.
-			 <br>A user can be member of several groups.
-             <br>If a user has created a group wants to delete her, he can.
-			 
-	<h4><p>About us</p></h4>
-            Our team is composed of five students at "Azrieli, College of Engineering Jerusalem".
-           <br><b>Team members are:</b> Adi Greenspan, Liran Harari, Daniel Korkotyan,
-		   <br>Shiran Mor-Yosef, Moran Mor-Yosef.
-           <br>The web developed as part of a course "software engineering" and open to everyone.
-           <br>If you have suggestions for improvement or any other comment- contact us and let us know.
- 
-	 
-	 			</div>
-	 
-	 
-      <div class="sidebar">
-        <div class="clr"></div>
-        <div class="gadget">
-          <h2 class="star"><span>Menu</span></h2>
-          <div class="clr"></div>
-          <ul class="ex_menu">
-            <li><a href="MySavedLinks"><h4>My Saved Links</h4></a><br/></li>
-            <li><a href="NewLinks"><h4>New Links</h4></a><br /></li>
-            <li><a href="contactsPage"><h4>My Personal Contact</h4></a><br /></li>
-            <li><a href="MyGroups"><h4>My Groups</h4></a><br /></li>
-
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-</div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
-	
-	<div class="site-footer">
-		<div class="bottom-footer">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 text-center">
-                        <span>Copyright &copy; 2015 <a href="#">ShareLink</a> | Design: <a href="http://www.templatemo.com">liranHarri</a></span>
-                        <p>The site is developed as part of course Software engineering in JCE-Jerusalem College Engineering</p>
-                    </div> <!-- /.col-md-12 -->
-                </div> <!-- /.row -->
-            </div> <!-- /.container -->
-        </div> <!-- /.bottom-footer -->
-    </footer> <!-- /.site-footer -->
-
-    
-    <script src="js/vendor/jquery-1.10.1.min.js"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
-    <script src="js/jquery.easing-1.3.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
-
-<!-- script for login box -->
-	
-	<script type="text/javascript">
-			$(function(){
-			  $('#loginform').submit(function(e){
-				return false;
-			  });
-			  
-			  $('#modaltrigger').leanModal({ top: 110, overlay: 0.45, closeButton: ".hidemodal" });
-			});
-</script>
-	
-	<!-- script for login box -->
-</body>
-</html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7">
+	<![endif]-->
+	<!--[if IE 7]>
+	<html class="no-js lt-ie9 lt-ie8">
+		<![endif]-->
+		<!--[if IE 8]>
+		<html class="no-js lt-ie9">
+			<![endif]-->
+			<!--[if gt IE 8]><!--> 
+			<html class="no-js">
+				<!--<![endif]-->
+				<head>
+					<!-- 
+						Kool Store Template
+						http://www.templatemo.com/preview/templatemo_428_kool_store
+						-->
+					<meta charset="utf-8">
+					<title>ShareLink</title>
+					<meta name="description" content="">
+					<meta name="viewport" content="width=device-width">
+					<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet">
+					<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
+					<link rel="stylesheet" type="text/css" href="../static/css/modal.css">
+					<!-- login box-->
+					<script type="text/javascript" src="../static/js/jquery-1.9.1.min.js"></script> <!-- login box-->
+					<script type="text/javascript" charset="utf-8" src="../static/js/jquery.leanModal.min.js"></script> <!-- login box-->
+					<script src="../static/js/masterPJS.js"></script>
+				</head>
+				<body>
+					<!--[if lt IE 7]>
+					<p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+					<![endif]-->
+					<header class="site-header">
+						<div class="top-header">
+							<div class="container">
+								<div class="row">
+									<div class="col-md-6 col-sm-6">
+										<div class="top-header-left">
+											<a href="Sign_up">Sign Up</a>
+											<a id="modaltrigger" href="#loginmodal" class="flatbtn">Log In</a>  <!-- onclick="sing_in_prompt()" -->
+										</div>
+										<!-- /.top-header-left -->
+									</div>
+									<!-- /.col-md-6 -->
+									<div class="social-icons">
+										<a id="logout_prompt" href="#" style="float:right" >Log Out</a>
+									</div>
+								</div>
+								<!-- /.row -->
+							</div>
+							<!-- /.container -->
+						</div>
+						<!-- /.top-header -->
+						<div class="main-header">
+							<div class="container">
+								<div class="row">
+									<div class="col-md-4 col-sm-6 col-xs-8">
+										<div class="logo">
+											<h1><a href="index">Share-Link</a></h1>
+										</div>
+										<!-- /.logo -->
+									</div>
+									<!-- /.col-md-4 -->
+									<div class="col-md-8 col-sm-6 col-xs-4" >
+										<div class="main-menu">
+											<img src="https://www.imageupload.co.uk/images/2015/04/28/sharelink-iconc0ece.png" width="200" height="200" align="top" style="margin:-50px 0px" />
+										</div>
+									</div>
+									<!-- /.col-md-8 -->
+								</div>
+								<!-- /.row -->
+							</div>
+							<!-- /.container -->
+						</div>
+						<!-- /.main-header -->
+						<div class="main-nav">
+							<div class="container">
+								<div class="row" >
+									<div class="col-md-6 col-sm-7">
+										<div class="list-menu">
+											<ul>
+												<li><a href="index">Home</a></li>
+												<li><a href="Details">Details</a></li>
+												<li><a href="contactUsPage">Contact Us</a></li>
+											</ul>
+										</div>
+										<!-- /.list-menu -->
+									</div>
+									<!-- /.col-md-6 -->
+									<div class="col-md-6 col-sm-5">
+										<div class="notification">
+										</div>
+									</div>
+									<!-- /.col-md-6 -->
+								</div>
+								<!-- /.row -->
+							</div>
+							<!-- /.container -->
+						</div>
+						<!-- /.main-nav -->
+					</header>
+					<!-- /.site-header -->
+					<!-- login box -->
+					<div id="loginmodal" style="display:none;">
+						<br>
+						<form id="loginform" name="loginform" method="post" action="index">
+							<h2>
+								<small>
+									<center>login</center>
+								</small>
+							</h2>
+							<input type="text" name="username" id="username" class="txtfield" tabindex="1" style="width:200px; height:35px;" placeholder="Username">
+							<input type="password" name="password" id="password" class="txtfield" tabindex="2" style="width:200px; height:35px;" placeholder="Password">
+							<div class="center"><input type="submit" name="loginbtn" id="loginbtn" class="myButton" value="Log In" tabindex="3" style="float:center; width:200px; height:35px;">
+							</div>
+						</form>
+					</div>
+					<!-- end login box -->
+					<div class="content-section">
+						<div class="container">
+							<div class="content">
+								<div class="content_resize">
+									<div class="mainbar">
+										<h4>
+											<p>How the idea was born?</p>
+										</h4>
+										During our Bachelor's degree in "Azrieli, College of Engineering Jerusalem", at Software Engineering,
+										We used a lot of different links. Every time we sent a link to a friend or group of students,
+										we use the Email or other similar channels.
+										<br>Over time, we were looking for an easy and convenient way to share links, and succeed to manage the links so we can retrieve them whenever we needed: 
+										<br>therefore we create <b>ShareLink</b>.
+										<div class="clr"> </div>
+										<br>
+										<h4>
+											<p>What the site offers?</p>
+										</h4>
+										<h5>
+											<p>User not registered:</p>
+										</h5>
+										<p>A non signed in user can send a link on the <b>'Main-Page'</b> without any registration to any valid email address.</p>
+										<h5>
+											<p>Registered User:</p>
+										</h5>
+										<b>My Saved Links page</b> - user can save all the links are important to him.
+										<br><b>New links page</b> - user can see links received from other users.
+										<br>If the user wants he can:
+										<br>share the link in the group, move the link to the personal page or delete link.
+										<br><b>Contacts</b> - user can add a contact to his own personal page, and share links.
+										<br>If the user wants he can delete a contact.
+										<br><b>Groups</b> - User can create a group and share links there.
+										<br>A user can be member of several groups.
+										<br>If a user has created a group wants to delete her, he can.
+										<h4>
+											<p>About us</p>
+										</h4>
+										Our team is composed of five students at "Azrieli, College of Engineering Jerusalem".
+										<br><b>Team members are:</b> Adi Greenspan, Liran Harari, Daniel Korkotyan,
+										<br>Shiran Mor-Yosef, Moran Mor-Yosef.
+										<br>The web developed as part of a course "software engineering" and open to everyone.
+										<br>If you have suggestions for improvement or any other comment- contact us and let us know.
+									</div>
+									<div class="sidebar">
+										<div class="clr"></div>
+										<div class="gadget">
+											<h2 class="star"><span>Menu</span></h2>
+											<div class="clr"></div>
+											<ul class="ex_menu">
+												<li>
+													<a href="MySavedLinks">
+														<h4>My Saved Links</h4>
+													</a>
+													<br/>
+												</li>
+												<li>
+													<a href="NewLinks">
+														<h4>New Links</h4>
+													</a>
+													<br />
+												</li>
+												<li>
+													<a href="contactsPage">
+														<h4>My Personal Contact</h4>
+													</a>
+													<br />
+												</li>
+												<li>
+													<a href="MyGroups">
+														<h4>My Groups</h4>
+													</a>
+													<br />
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="site-footer">
+					<div class="bottom-footer">
+						<div class="container">
+							<div class="row">
+								<div class="col-md-12 text-center">
+									<span>Copyright &copy; 2015 <a href="#">ShareLink</a> | Design: <a href="http://www.templatemo.com">ShareLink</a></span>
+									<p>The site is developed as part of course Software engineering in JCE-Jerusalem College Engineering</p>
+								</div>
+								<!-- /.col-md-12 -->
+							</div>
+							<!-- /.row -->
+						</div>
+						<!-- /.container -->
+					</div>
+					<!-- /.bottom-footer -->
+					</footer> <!-- /.site-footer -->
+					<script src="js/vendor/jquery-1.10.1.min.js"></script>
+					<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.1.min.js"><\/script>')</script>
+					<script src="js/jquery.easing-1.3.js"></script>
+					<script src="js/bootstrap.js"></script>
+					<script src="js/plugins.js"></script>
+					<script src="js/main.js"></script>
+					<!-- script for login box -->
+					<script type="text/javascript">
+						$(function(){
+						  $('#loginform').submit(function(e){
+							return false;
+						  });
+						  
+						  $('#modaltrigger').leanModal({ top: 110, overlay: 0.45, closeButton: ".hidemodal" });
+						});
+					</script>
+					<!-- script for login box -->
+				</body>
+			</html>

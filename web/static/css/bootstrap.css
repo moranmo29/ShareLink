@@ -6099,6 +6099,7 @@ h6 {
    ========================================================================== */
 .top-header {
   border-bottom: 1px solid #dddddd;
+  
 }
 .top-header .top-header-left a {
   border-left: 1px solid #dddddd;
@@ -6108,9 +6109,11 @@ h6 {
 .top-header .top-header-left a:last-child {
   border-right: 1px solid #dddddd;
 }
-.top-header .social-icons {
+.top-header .social-icons a {
   float: right;
-  text-align: right;
+  border: 1px solid #dddddd;
+  padding: 10px 15px;
+  display: inline-block;
 }
 .top-header .social-icons ul li {
   float: left;
