@@ -15,26 +15,26 @@ handlers:
 - url: /index
   script: web.pages.index.app
   
-- url: /Details
-  script: web.pages.Details.app
+- url: /details
+  script: web.pages.details.app
   
-- url: /contactUsPage
-  script: web.pages.contactUsPage.app
+- url: /contactuspage
+  script: web.pages.contactuspage.app
   
-- url: /contactsPage
-  script: web.pages.contactsPage.app
+- url: /contactspage
+  script: web.pages.contactspage.app
   
-- url: /MyGroups
-  script: web.pages.MyGroups.app
+- url: /mygroups
+  script: web.pages.mygroups.app
   
-- url: /MySavedLinks
-  script: web.pages.MySavedLinks.app
+- url: /mysavedlinks
+  script: web.pages.mysavedlinks.app
 
-- url: /NewLinks
-  script: web.pages.NewLinks.app
+- url: /newlinks
+  script: web.pages.newlinks.app
 
-- url: /Sign_up
-  script: web.pages.Sign_up.app
+- url: /sign_up
+  script: web.pages.sign_up.app
   
 - url: /
   script: web.pages.index.app
