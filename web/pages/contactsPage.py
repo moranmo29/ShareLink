@@ -11,9 +11,9 @@ class IndexHandler(webapp2.RequestHandler):
 #			template_params['logoutUrl'] = User.logoutUrl()
 #			template_params['user'] = user.email
 		
-		html = template.render("web/templates/contactsPage.html", template_params)
+		html = template.render("web/templates/contactspage.html", template_params)
 		self.response.write(html)
 
 app = webapp2.WSGIApplication([
-	('/contactsPage', IndexHandler)
+	('/contactspage', IndexHandler)
 ], debug=True)

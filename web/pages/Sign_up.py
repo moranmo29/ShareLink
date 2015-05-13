@@ -11,9 +11,9 @@ class IndexHandler(webapp2.RequestHandler):
 #			template_params['logoutUrl'] = User.logoutUrl()
 #			template_params['user'] = user.email
 		
-		html = template.render("web/templates/Sign_up.html", template_params)
+		html = template.render("web/templates/sign_up.html", template_params)
 		self.response.write(html)
 
 app = webapp2.WSGIApplication([
-	('/Sign_up', IndexHandler)
+	('/sign_up', IndexHandler)
 ], debug=True)
