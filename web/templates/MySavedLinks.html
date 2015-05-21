@@ -5,6 +5,7 @@
 	<head>
 		{% block head %}
 		{{ block.super }}
+		<script src="../static/js/tabeljs.js"></script>
 		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="../static/css/tableInSaveLinkw.css">
 		<link rel="stylesheet" type="text/css" href="../static/css/tableInNewLinks.css">
@@ -22,9 +23,9 @@
 					</div>
 					<div class="modal-body">
 						<form id="loginform" name="loginform" method="post" action="index">													
-							<input type="text" name="destintion_user" id="destintion_user" class="txtfield" tabindex="1" style="width:100%; height:35px;" placeholder="to..."><br/><br/>
-							<input type="text" name="description" id="description" class="txtfield" tabindex="1" style="width:100%; height:35px;" placeholder="description"><br/><br/>										  
-							<input type="text" name="url" id="url" class="txtfield" tabindex="1" style="width:100%; height:35px;" placeholder="copy your link here."><br/>
+							<input type="text" name="destintion_user" id="destintion_user" class="txtfield" tabindex="1" style="width:100%; height:35px;" placeholder="to...">
+							<input type="text" name="description" id="description" class="txtfield" tabindex="1" style="width:100%; height:35px;" placeholder="description">									  
+							<input type="text" name="url" id="url" class="txtfield" tabindex="1" style="width:100%; height:35px;" placeholder="copy your link here.">
 						</form>
 						<p></p>
 						<p></p>
@@ -63,106 +64,7 @@
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
-											<td>Top 10 CSS Table Design</td>
-											<td><a href="http://codepen.io/anon/pen/bdVyMa" target="_blank">http://codepen.io/anon/pen/bdVyMa</a></td>
-											<td>
-												<div class="listingbtns">
-													<span class="listbuttons">
-													<a data-toggle="modal" href="#shortModal">ShareLink</a></span>
-													<span class="listbuttons">
-													<a href="#">Delete</a></span>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<td></td>
-											<td>
-												<a href="http://www.w3.org/Style/Examples/007/evenodd" 
-													target="_blank">
-													http://www.w3.org/Style/Examples/007/evenodd
-											</td>
-											<td>
-											<div class="listingbtns">
-											<span class="listbuttons">
-											<a data-toggle="modal" href="#shortModal">ShareLink</a></span>
-											<span class="listbuttons">
-											<a href="#">Delete</a></span>
-											</div>
-											</td>
-										</tr>
-										<tr>
-											<td>stackoverflow</td>
-											<td><a href="http://stackoverflow.com/questions/19/what-is-the-fastest-way-to-get-the-value-of-%CF%80" target="_blank">http://stackoverflow.com/questions/19/what-is-the-fastest-way-to-get-the-value-of-%CF%80</a></td>
-											<td>
-												<div class="listingbtns">
-													<span class="listbuttons">
-													<a data-toggle="modal" href="#shortModal">ShareLink</a></span>
-													<span class="listbuttons">
-													<a href="#">Delete</a></span>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<td>in this link have a lot of Examples</td>
-											<td><a href="http://www.w3schools.com" target="_blank">http://www.w3schools.com</a></td>
-											<td>
-												<div class="listingbtns">
-													<span class="listbuttons">
-													<a data-toggle="modal" href="#shortModal">ShareLink</a></span>
-													<span class="listbuttons">
-													<a href="#">Delete</a></span>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<td>create button</td>
-											<td><a href="http://css3buttongenerator.com/" target="_blank">http://css3buttongenerator.com/</a></td>
-											<td>
-												<div class="listingbtns">
-													<span class="listbuttons">
-													<a data-toggle="modal" href="#shortModal">ShareLink</a></span>
-													<span class="listbuttons">
-													<a href="#">Delete</a></span>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<td>create button</td>
-											<td><a href="http://css3buttongenerator.com/" target="_blank">http://css3buttongenerator.com/</a></td>
-											<td>
-												<div class="listingbtns">
-													<span class="listbuttons">
-													<a data-toggle="modal" href="#shortModal">ShareLink</a></span>
-													<span class="listbuttons">
-													<a href="#">Delete</a></span>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<td>create button</td>
-											<td><a href="http://css3buttongenerator.com/" target="_blank">http://css3buttongenerator.com/</a></td>
-											<td>
-												<div class="listingbtns">
-													<span class="listbuttons">
-													<a data-toggle="modal" href="#shortModal">ShareLink</a></span>
-													<span class="listbuttons">
-													<a href="#">Delete</a></span>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<td>create button</td>
-											<td><a href="http://css3buttongenerator.com/" target="_blank">http://css3buttongenerator.com/</a></td>
-											<td>
-												<div class="listingbtns">
-													<span class="listbuttons">
-													<a data-toggle="modal" href="#shortModal">ShareLink</a></span>
-													<span class="listbuttons">
-													<a href="#">Delete</a></span>
-												</div>
-											</td>
-										</tr>
+									<script> writeTheValueInTabelMySavedLinks();</script>
 									</tbody>
 								</table>
 							</div>

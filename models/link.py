@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 #this model keeps the link
-=======
-#this model keeps the link per user
->>>>>>> origin/master
 
 from google.appengine.ext import ndb
 from user import User
