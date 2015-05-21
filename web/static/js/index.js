@@ -20,11 +20,11 @@ function submitLogin() {
 		url:'/login', // going to the python function that define as login
 		type:'GET', 
 		dataType:'json',
-        data:{email:email, password:password}, // מעבירים את הפרמטרים האלה בלוגין ומחכים לתשובה
+        data:{email:email, password:password},
 		success:function(data, status, xhr) {
-            location.reload(); // התמודדות עם החזרה
+            location.reload(); 
 		},
-		error:function(xhr, status, error) { // אם זה חוזר עם טעות תריץ את הקוד הזה
+		error:function(xhr, status, error) { 
             alert(xhr.responseText);
 			console.error(xhr, status, error);
 		}
