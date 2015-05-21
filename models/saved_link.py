@@ -1,4 +1,4 @@
-#this model keeps the saved links per user
+#this model keeps the link per user
 
 from google.appengine.ext import ndb
 
