@@ -42,4 +42,13 @@ class User(ndb.Model):
 			
 		else:
 			return "not connected"
+			
+	def checkPassword(self, password):
+		if not password:
+			return False
+		logging.info("self.pass: {}, hashed pass: {}".format(self.password, hashlib.md5(password).hexdigest()))
+		if self.password == hashlib.md5(password).hexdigest():
+			return True
+
+		return False
 	
