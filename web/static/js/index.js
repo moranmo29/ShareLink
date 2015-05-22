@@ -1,6 +1,7 @@
 // when .modal-wide opened, set content-body height based on browser height; 200 is appx height of modal padding, modal title and button bar
 $(function() {  //this is jQuery's short notation for "fire all this when page is ready"
-    $('#register').on('click', submitRegister);
+   $('#login').on('click', submitLogin);
+   $('#register').on('click', submitRegister);
 });
 
 $(".modal-wide").on("show.bs.modal", function() {
@@ -8,6 +9,24 @@ $(".modal-wide").on("show.bs.modal", function() {
   $(this).find(".modal-body").css("max-height", height);
 });
 
+function submitLogin() {
+    var email = $('#login_email').val();
+    var password = $('#login_password').val();
+    $.ajax({
+		url:'/login',
+		type:'GET',
+		dataType:'json',
+        data:{email:email, password:password},
+		success:function(data, status, xhr) {
+            location.reload();
+		},
+		error:function(xhr, status, error) {
+            alert("the login faild!!");
+			console.error(xhr, status, error);
+			window.location.href = "/index";	
+		}
+	});
+}
 
 function submitRegister() {
     var email = $('#reg_email').val();
