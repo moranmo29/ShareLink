@@ -2,6 +2,7 @@
 $(function() {  //this is jQuery's short notation for "fire all this when page is ready"
    $('#login').on('click', submitLogin);
    $('#register').on('click', submitRegister);
+   
 });
 
 $(".modal-wide").on("show.bs.modal", function() {
@@ -18,7 +19,9 @@ function submitLogin() {
 		dataType:'json',
         data:{email:email, password:password},
 		success:function(data, status, xhr) {
-            location.reload();
+           // location.reload();
+		   window.location.href = "/mysavedlinks";	
+
 		},
 		error:function(xhr, status, error) {
             alert("the login faild!!");

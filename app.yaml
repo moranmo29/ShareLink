@@ -30,6 +30,9 @@ handlers:
 - url: /mysavedlinks
   script: web.pages.mysavedlinks.app
 
+- url: /addLink
+  script: web.pages.mysavedlinks.app
+
 - url: /newlinks
   script: web.pages.newlinks.app
 
