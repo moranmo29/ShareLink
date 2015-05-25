@@ -6,6 +6,7 @@
 	{% block head %}
 	{{ block.super }}
 	<link rel="stylesheet" type="text/css" href="../static/css/tableInNewLinks.css">
+	<script src="../static/js/tabeljs.js"></script>
 	{% endblock %}
 	</head>
 	<body>
@@ -27,75 +28,8 @@
 										</tr>
 									</thead>
 									<tbody>
-										<tr>
-											<td><strong>moranmo</strong></td>
-											<td>Top 10 CSS Table Design</td>
-											<td><a href="http://codepen.io/anon/pen/bdVyMa" target="_blank">http://codepen.io/anon/pen/bdVyMa</a></td>
-											<td>
-												<div class="listingbtns">
-													<span class="listbuttons">
-													<a href="#">SaveLink</a></span>
-													<span class="listbuttons">
-													<a href="#">Delete</a></span>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<td><strong>moranmo</strong></td>
-											<td></td>
-											<td>
-												<a href="http://www.w3.org/Style/Examples/007/evenodd" 
-													target="_blank">
-													http://www.w3.org/Style/Examples/007/evenodd
-											</td>
-											<td>
-											<div class="listingbtns">
-											<span class="listbuttons">
-											<a href="#">SaveLink</a></span>
-											<span class="listbuttons">
-											<a href="#">Delete</a></span>
-											</div>
-											</td>
-										</tr>
-										<tr>
-											<td><strong>liranharari</strong></td>
-											<td>stackoverflow</td>
-											<td><a href="http://stackoverflow.com/questions/19/what-is-the-fastest-way-to-get-the-value-of-%CF%80" target="_blank">http://stackoverflow.com/questions/19/what-is-the-fastest-way-to-get-the-value-of-%CF%80</a></td>
-											<td>
-												<div class="listingbtns">
-													<span class="listbuttons">
-													<a href="#">SaveLink</a></span>
-													<span class="listbuttons">
-													<a href="#">Delete</a></span>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<td><strong>avitol</strong></td>
-											<td>in this link have a lot of Examples</td>
-											<td><a href="http://www.w3schools.com" target="_blank">http://www.w3schools.com</a></td>
-											<td>
-												<div class="listingbtns">
-													<span class="listbuttons">
-													<a href="#">SaveLink</a></span>
-													<span class="listbuttons">
-													<a href="#">Delete</a></span>
-												</div>
-											</td>
-										</tr>
-										<tr>
-											<td><strong>daniel</strong></td>
-											<td>create button</td>
-											<td><a href="http://css3buttongenerator.com/" target="_blank">http://css3buttongenerator.com/</a></td>
-											<td>
-												<div class="listingbtns">
-													<span class="listbuttons">
-													<a href="#">SaveLink</a></span>
-													<span class="listbuttons">
-													<a href="#">Delete</a></span>
-												</div>
-											</td>
-										</tr>
+										<script> writeTheValueInTabel();
+										</script>
 									</tbody>
 								</table>
 							</div>
