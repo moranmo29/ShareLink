@@ -1,178 +1,53 @@
+{% extends "masterpage.html" %}
 <!DOCTYPE html>
 <!--[if gt IE 8]><!--> 
 <html class="no-js">
 	<!--<![endif]-->
 	<head>
-		<meta charset="utf-8">
-		<title>ShareLink</title>
-		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width">
-		<link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet">
-		<link rel="stylesheet" type="text/css" href="../static/css/bootstrap.css">
-		<script src="js/vendor/modernizr-2.6.2.min.js"></script>
+		{% block head %}
+		{{ block.super }}
+		{% endblock %}
 	</head>
 	<body>
-		<header class="site-header">
-			<div class="top-header">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-6 col-sm-6">
-							<div class="top-header-left">
-								<form id="logInField">
-									<a href="#">Sign Up</a>
-									<a id="login" href="javascript:;">Log In</a>
-								</form>
-							</div>
-							<!-- /.top-header-left -->
-						</div>
-						<!-- /.col-md-6 -->
-						<div class="social-icons">
-							<a id="logout_prompt" href="#" style="float:right" >Log Out</a>
-						</div>
-					</div>
-					<!-- /.row -->
-				</div>
-				<!-- /.container -->
-			</div>
-			<!-- /.top-header -->
-			<div class="main-header">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-4 col-sm-6 col-xs-8">
-							<div class="logo">
-								<h1><a href="index">Share-Link</a></h1>
-							</div>
-							<!-- /.logo -->
-						</div>
-						<!-- /.col-md-4 -->
-						<div class="col-md-8 col-sm-6 col-xs-4" >
-							<div class="main-menu">
-								<img src="https://www.imageupload.co.uk/images/2015/04/28/sharelink-iconc0ece.png" width="200" height="200" align="top" style="margin:-50px 0px" />
-							</div>
-						</div>
-						<!-- /.col-md-8 -->
-					</div>
-					<!-- /.row -->
-				</div>
-				<!-- /.container -->
-			</div>
-			<!-- /.main-header -->
-			<div class="main-nav">
-				<div class="container">
-					<div class="row" >
-						<div class="col-md-6 col-sm-7">
-							<div class="list-menu">
-								<ul>
-									<li><a href="index">Home</a></li>
-									<li><a href="details">Details</a></li>
-									<li><a href="contactuspage">Contact Us</a></li>
-								</ul>
-							</div>
-							<!-- /.list-menu -->
-						</div>
-						<!-- /.col-md-6 -->
-						<div class="col-md-6 col-sm-5">
-							<div class="notification">
-							</div>
-						</div>
-						<!-- /.col-md-6 -->
-					</div>
-					<!-- /.row -->
-				</div>
-				<!-- /.container -->
-			</div>
-			<!-- /.main-nav -->
-		</header>
+		{% block menuup %}
+		{{ block.super }}
+		{% endblock %}	
 		<!-- /.site-header -->
-		<div class="content-section">
-			<div class="container">
-				<div class="content">
-					<div class="content_resize">
-						<div class="mainbar">
+				{% block mainsite %}	
+		{{ block.super }}
 							<h3>Sign Up</h3>
 							<h4>It’s free and always will be.</h4>
 							<table border="0" style="width:400px; height:200px; font-size:120%;">
-								
-								<!-- =============PASSWORD=================== -->
-								<tr>
-									<td>
-										Password:
-									</td>
-									<td>
-										<input type="password" name="password" size="25">
-									</td>
-								</tr>
 								<!-- =============EMAIL=================== -->
 								<tr>
 									<td>
 										Email:
 									</td>
 									<td>
-										<input type="email" name="email" size="25">
+										<input id="reg_email" type="email" name="email" size="25">
 									</td>
 								</tr>
-
+								<!-- =============PASSWORD=================== -->
+								<tr>
+									<td>
+										Password:
+									</td>
+									<td>
+										<input id="reg_password" type="password" name="password" size="25">
+									</td>
+								</tr>
 								<tr>
 									<td colspan="2">
-										<button type="button" style="border:0px; color:white; background-color:#2a80b9; margin-left:130px; margin-top:10px; padding:5px 10px; border-radius:5px;">Sign Up</button>
+										<button id="register" type="button" style="border:0px; color:white; background-color:#2a80b9; margin-left:130px; margin-top:10px; padding:5px 10px; border-radius:5px;">Sign Up</button>
 									</td>
 								</tr>
 							</table>
-						</div>
-						<div class="sidebar">
-							<div class="clr"></div>
-							<div class="gadget">
-								<h2 class="star"><span>Menu</span></h2>
-								<div class="clr"></div>
-								<ul class="ex_menu">
-									<li>
-										<a href="mysavedlinks">
-											<h4>My Saved Links</h4>
-										</a>
-										<br/>
-									</li>
-									<li>
-										<a href="newlinks">
-											<h4>New Links</h4>
-										</a>
-										<br />
-									</li>
-									<li>
-										<a href="contactspage">
-											<h4>My Personal Contact</h4>
-										</a>
-										<br />
-									</li>
-									<li>
-										<a href="mygroups">
-											<h4>My Groups</h4>
-										</a>
-										<br />
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="clr"></div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="site-footer">
-		<div class="bottom-footer">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12 text-center">
-						<span>Copyright &copy; 2015 <a href="#">ShareLink</a> | Design: <a href="http://www.templatemo.com">ShareLink</a></span>
-						<p>The site is developed as part of course Software engineering in JCE-Jerusalem College Engineering</p>
-					</div>
-					<!-- /.col-md-12 -->
-				</div>
-				<!-- /.row -->
-			</div>
-			<!-- /.container -->
-		</div>
-		<!-- /.bottom-footer -->
-		</footer> <!-- /.site-footer -->
-		
+		{% endblock %}
+		{% block leftmenu %}
+		{{ block.super }}
+		{% endblock %}
+		{% block sitefooter %}
+		{{ block.super }}
+		{% endblock %}
 	</body>
 </html>

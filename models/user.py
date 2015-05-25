@@ -1,45 +1,24 @@
-#this model keeps the saved links per user
-import hashlib
-
-from google.appengine.api import users
 from google.appengine.ext import ndb
+import hashlib      #we need this to safely store passwords
+import logging
 
 class User(ndb.Model):
-	email= ndb.StringProperty()
-	password= ndb.StringProperty()
-	
-	def checkUser():
-		googleuser= users.get_current_user()
-		if not googleuser:
-			return False
-			
-		user= User.query(User.email==googleuser.email).get()
-		if user:
-			passwordMD5=user.password
-			if (passwordMD5==User.password):
-				return user
-		return False
-		
-	@staticmethod
-	def login():
-		return users.create_login_url('/MySavedLinks')
-		
-	@staticmethod
-	def logout():
-		return users.create_login_url('/')
+	email = ndb.StringProperty()
+	password = ndb.StringProperty()
 
 	@staticmethod
-	def connect(password):
-		googleUser =users.get_current_user()
-		if googleUser:
-			user=User.query(User.email == googleUser.email()).get()
-			if not user:
-				user =User()
-				user.emai=googleUser.email()
-				user.password=password
-				user.put()
-			return user
-			
-		else:
-			return "not connected"
-	
+	def checkToken(token):
+		user = User.get_by_id(long(token))
+		return user
+
+	def setPassword(self, password):
+		self.password = hashlib.md5(password).hexdigest()
+		self.put()
+
+	def checkPassword(self, password):
+		if not password:
+			return False
+		logging.info("self.pass: {}, hashed pass: {}".format(self.password, hashlib.md5(password).hexdigest()))
+		if self.password == hashlib.md5(password).hexdigest():
+			return True
+		return False

@@ -35,6 +35,15 @@ handlers:
 
 - url: /sign_up
   script: web.pages.sign_up.app
+
+- url: /sign_up_buttom
+  script: web.pages.sign_up_buttom.app
+  
+- url: /login
+  script: web.pages.sign_up_buttom.app
+
+- url: /logout
+  script: web.pages.sign_up_buttom.app
   
 - url: /
   script: web.pages.index.app
