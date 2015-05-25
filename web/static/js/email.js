@@ -11,5 +11,9 @@ function sendEmail(){
 	
 	//location.href('mailto:' + email + '?subject=' + description + '&body=' + body);
 	
-	window.location.href = "mailto:korkotyan@gmail.com?cc=CCaddress@example.com&subject="+escape("link")+"&body="+escape("link");
+	alert("I am an alert box!");
+	
+	//window.location.href = "http://mail.google.com/mail/?view=cm&fs=1" + "&to=adi8554@gmail.com" + "&su="+escape("link")+"&body="+escape("link");
+	
+	window.location.href = "mailto:adi8554@gmail.com?" + "cc=korkotyan@gmail.com" + "&subject="+escape("link")+"&body="+escape("link");
 }
