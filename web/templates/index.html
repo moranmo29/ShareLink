@@ -11,6 +11,15 @@
 	</head>
 	<body>
 		{% block menuup %}
+		<!-- /.modal -->
+		{{ block.super }}
+		{% endblock %}
+		<!-- /.site-header -->
+		<!-- login box -->
+		{% block loginbox %}
+		{{ block.super }}
+		{% endblock %}
+		<!-- end login box -->
 		<div id="shortModal" class="modal modal-wide fade">
 			<div class="modal-dialog" style="margin-top:170px;">
 				<div class="modal-content">
@@ -37,15 +46,6 @@
 			</div>
 			<!-- /.modal-dialog -->
 		</div>
-		<!-- /.modal -->
-		{{ block.super }}
-		{% endblock %}
-		<!-- /.site-header -->
-		<!-- login box -->
-		{% block loginbox %}
-		{{ block.super }}
-		{% endblock %}
-		<!-- end login box -->
 		{% block mainsite %}
 		{{ block.super }}
 		<h1>
