@@ -33,6 +33,9 @@ handlers:
 - url: /addLink
   script: web.pages.mysavedlinks.app
 
+- url: /shareMail
+  script: web.pages.shareMail.app
+
 - url: /newlinks
   script: web.pages.newlinks.app
 
