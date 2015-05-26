@@ -23,7 +23,7 @@ function writeTheValueInTabel(){
 
 function writeTheValueInTabelMySavedLinks(){
 	var index;	
-	/*var text="";
+	var text="";
 	var link={Description:"Top 10 CSS Table Design" ,Link:"http://codepen.io/anon/pen/bdVyMa"};
 	var link4={Description:"" ,Link:"http://www.w3.org/Style/Examples/007/evenodd"};
 	var link3={Description:"stackoverflow", Link:"http://stackoverflow.com/questions/19/what-is-the-fastest-way-to-get-the-value-of-%CF%80"};
@@ -31,7 +31,7 @@ function writeTheValueInTabelMySavedLinks(){
 	var link1={Description:"create button" ,Link:"http://css3buttongenerator.com/"};
 	var link5={Description:"create button" ,Link:"http://css3buttongenerator.com/"};
 	var link6={Description:"create button" ,Link:"http://css3buttongenerator.com/"};
-	var link7={Description:"create button" ,Link:"http://css3buttongenerator.com/"};*/
+	var link7={Description:"create button" ,Link:"http://css3buttongenerator.com/"};*
 	
 
 	var links=[link,link1,link2,link3,link4,link5,link6,link7];

@@ -29,8 +29,13 @@ class Link(ndb.Model):
 		
 	@staticmethod
 	def getAllLinksPerUser(user):
-		links=Link.query(Link.user == user.key )
-		return links
+		links=[]
+		qur=Link.query(Link.user == user.key ).fetch()
+		if qur:
+			for url_link in qur:
+				links.append(url_link)
+			return links
+		return None
 
 	def remove(self):
 		link=Link.query(Link.user == self.user.key ,Link.url_link == self.url , Link.description == self.des )

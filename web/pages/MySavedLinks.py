@@ -14,7 +14,17 @@ class IndexHandler(webapp2.RequestHandler):
 			html = template.render("web/templates/index.html", {})
 			self.response.write(html)
 			return
-		template_params = {}		
+		linkslist=Link.getAllLinksPerUser(user);	
+		urls = []
+		template_params = {}
+		if linkslist:
+			for link in linkslist:
+				url = link.url_link
+				des = link.description
+				urlandlink =[url,des]
+				urls.append(urlandlink)
+			template_params['urls'] = urls
+		template_params['useremail'] = user.email
 		html = template.render("web/templates/mysavedlinks.html", template_params)
 		self.response.write(html)
 		return

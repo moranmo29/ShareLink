@@ -70,6 +70,8 @@
 		{% endblock %}
 		<!-- /.site-header -->
 				{% block mainsite %}	
+				<span id='useremail'>{{useremail}}</span><br/>
+				<span id='urls'>{{urls}}</span>
 				{{ block.super }}
 							<a data-toggle="modal" href="#shortModaladdmylist" class="myButton" ng-click="launch('create')" style="position:relative; top:50px; left:-28px; height:30px; width:130px;">Add new Link!</a>
 							<div class="box">
