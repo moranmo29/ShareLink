@@ -14,7 +14,7 @@ class IndexHandler(webapp2.RequestHandler):
 			html = template.render("web/templates/index.html", {})
 			self.response.write(html)
 			return
-		linkslist=Link.getAllLinksPerUser(user);	
+		linkslist=Link.getAllLinksPerUser(user)	
 		urls = []
 		template_params = {}
 		if linkslist:

@@ -1,12 +1,21 @@
+th{
+	border-left: 1px solid #777;	
+	box-shadow: inset 1px 1px 0 #999;
+	width:90%;
+}
+td {
+	box-shadow: inset 1px 0 0 #fff;
+	width:90%
+}	
 
 th:first-child {
 	border-left: 1px solid #777;	
 	box-shadow: inset 1px 1px 0 #999;
-	width:190%;
+	width:20%;
 }
 td:first-child {
 	box-shadow: inset 1px 0 0 #fff;
-	width:190%
+	width:20%
 }	
 
 .container-1{

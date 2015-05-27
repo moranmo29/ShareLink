@@ -29,22 +29,22 @@ handlers:
   
 - url: /mysavedlinks
   script: web.pages.mysavedlinks.app
-
+  
 - url: /addLink
   script: web.pages.mysavedlinks.app
-
+  
 - url: /newlinks
   script: web.pages.newlinks.app
-
+  
 - url: /sign_up
   script: web.pages.sign_up.app
-
+  
 - url: /sign_up_buttom
   script: web.pages.sign_up_buttom.app
   
 - url: /login
   script: web.pages.sign_up_buttom.app
-
+  
 - url: /logout
   script: web.pages.sign_up_buttom.app
   
@@ -53,7 +53,7 @@ handlers:
   
 - url: .*
   script: main.app
-
+  
 libraries:
 - name: webapp2
   version: "2.5.2"
