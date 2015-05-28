@@ -40,7 +40,6 @@ function submitRegister() {
 		dataType:'json',
         data:{email:email, password:password},
 		success:function(data, status, xhr) {
-           alert("success");
 		   // location.reload();
 		   window.location.href = "/mysavedlinks";	
 		},

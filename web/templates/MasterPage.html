@@ -87,7 +87,12 @@
 				</div>
 				<!-- /.container -->
 			</div>
-			<!-- /.main-nav -->
+			<!-- /.main-nav --><br/>
+			{%if useremail%}
+			<h3><div><p style="text-indent: 5em;">Hello, {{useremail}}.<p></div></h3>
+			{% else %}
+			<h3><div><p style="text-indent: 5em;">Hello, Guest.<p></div></h3>
+			{%endif%}
 		</header>
 		{% endblock %}
 		<!-- /.site-header -->

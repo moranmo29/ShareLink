@@ -32,6 +32,12 @@ handlers:
   
 - url: /addLink
   script: web.pages.mysavedlinks.app
+
+- url: /share
+  script: web.pages.mysavedlinks.app
+
+- url: /deletelink
+  script: web.pages.mysavedlinks.app
   
 - url: /newlinks
   script: web.pages.newlinks.app

@@ -22,3 +22,11 @@ class User(ndb.Model):
 		if self.password == hashlib.md5(password).hexdigest():
 			return True
 		return False
+		
+	@staticmethod
+	def checkIfUesr(email):
+		user=User.query(User.email == email).get()
+		if user:
+			return user
+		return None
+		

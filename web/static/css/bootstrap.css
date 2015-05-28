@@ -6226,7 +6226,7 @@ h6 {
     Default Styling
    ========================================================================== */
 .content-section {
-  margin: 20px 0;
+  margin: 5px 0;
   border-bottom: 1px solid #dddddd;
   padding-bottom: 60px;
   width: 100%;
@@ -6234,7 +6234,7 @@ h6 {
 }
 
 .content {
-	padding:56px 0 40px;
+	padding:10px 0 40px;
 }
 .content_resize {
 	margin:0 auto;
