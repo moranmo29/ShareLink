@@ -1,0 +1,111 @@
+{% extends "masterpage.html" %}
+<!DOCTYPE html>
+<html class="no-js">
+	<!--<![endif]-->
+	<head>
+		{% block head %}
+		{{ block.super }}
+		<script src="http://s.codepen.io/assets/libs/modernizr.js" type="text/javascript"></script>
+		<script src="http://s.codepen.io/assets/libs/email.js" type="text/javascript"></script>
+		{% endblock %}
+	</head>
+	<body>
+		{% block menuup %}
+				<!-- /.modal -->
+		{{ block.super }}
+		{% endblock %}
+		<!-- /.site-header -->
+		<!-- login box -->
+		{% block loginbox %}
+		{{ block.super }}
+		{% endblock %}
+		<!-- end login box -->
+		<div id="shortModal" class="modal modal-wide fade">
+			<div class="modal-dialog" style="margin-top:170px;">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" 
+							aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">
+						<form id="loginform" name="loginform" method="post" action="index">													
+							<input type="email" name="email" id="email" class="txtfield" tabindex="1" style="width:100%; height:35px;" placeholder="to...">
+							<input type="text" name="description" id="description" class="txtfield" tabindex="1" style="width:100%; height:35px;" placeholder="description">										  
+							<input type="url" name="url" id="url" class="txtfield" tabindex="1" style="width:100%; height:35px;" placeholder="copy your link here.">
+						</form>
+						<p></p>
+						<p></p>
+						<p></p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary" onclick="sendEmail()">Share!</button>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+		{% block mainsite %}
+		{{ block.super }}
+		<h1>
+			<p class="ex">Now you can:</p>
+		</h1>
+		<h3>
+			<p class="ex">Save your favorite links!<br/>&nbsp; Share links with your friends!<br/>&nbsp;&nbsp;&nbsp;&nbsp;Share links with group of people!</p>
+		</h3>
+		<br/>
+		<h4><span>URL:</span></h4>
+		<input type="url" name="URL" size="86px" style="border:3px solid #476e9e;" >
+		<!--	  <body ng-controller="dialogServiceTest" class="pad">
+			<button class="btn btn-warning" ng-click="launch('create')">a href="#" class="myButton">ShareLink Now!</a></button>-->
+		<a href="#shortModal" class="myButton" data-toggle="modal">ShareLink Now!</a>
+		<div class="article">
+			<br/><br/><br/><br/><br/><br/>
+			<h2><span>Excellent Solution For Manage your Links</span></h2>
+			<div class="clr"></div>
+			<img src="../static/images/saveLink.png" width="177" height="160" />
+			<div class="post_content">
+				<p><strong>save link </strong>one of the main option in this web is to save your favorite links, and watch your links clearly and easily.You can describe the link in a way that helps you find it quickly in the future.</p>
+				<br/>
+				<p>When you loged in to the web you just need to enter your personal page, copy the link URL,add a description- if you want, and press the "add" button to add it to your list, and now you can see the link in the top of your link list! </p>
+			</div>
+			<div class="clr"></div>
+			<br/><br/>
+			<div class="clr"></div>
+			<img src="../static/images/sendLink.png" width="177" height="160" />
+			<div class="post_content">
+				<p><strong>send link to friend </strong>did you see a link that you know that your friend will glad to get? did you what to send link in the mail all the message just for the link? now you can send a link to your friend easy way and short one.When you loged in to the web you just need to enter your person Contact page,go to the user name of user friend press on the contact person that you want to send, the web open new windows then copy the link URL, and press the "send" button and the link is on way to your friend.  </p>
+				<p><strong>new! </strong> you Don't have account?you can experience now and send your link- what you need to do is just field the email address of your friend and the URL and the link is his way to your friend mail. did you like the idea? <strong>Great! join us.</strong> </p>
+			</div>
+			<div class="clr"></div>
+			<br/><br/><br/>
+			<div class="clr"></div>
+			<img src="../static/images/recieveLink.png" width="177" height="160" />
+			<div class="post_content">
+				<br/>
+				<p><strong>get link </strong>did you ever get an email and inside was only URL? did you ever search URL in the mail and forgot how who send you call the link? so this web came to help you, now what you need to do is insert to the new Links page and see all the new links that your friends send to you -if you want to save the link press on "add" also you can describe the link that your just want to add it and the link will appear in personal page in the link list, if you don't want the link you can remove it. <strong>it's-easy and short.</strong></p>
+				<br/>
+			</div>
+			<br/><br/><br/>
+			<div class="clr"></div>
+			<img src="../static/images/groupLink.png" width="177" height="160" />
+			<div class="post_content">
+				<br/>
+				<p><strong>Share links in groups- </strong>are you a lecturer at the academy? teacher? maybe teaching assistant? or somebody that want to share link to group of people? so this web came to help you, now you can share Links group of people, not waste your time and you students. what you need to do is sign up and open a group that everyone in there can share links that fit in.<strong>now it's-possible and save everyone's time.</strong></p>
+				<br/>
+			</div>
+			<div class="clr"></div>
+		</div>
+		{% endblock %}
+		{% block leftmenu %}
+		{{ block.super }}
+		{% endblock %}
+		{% block sitefooter %}
+		{{ block.super }}
+		{% endblock %}
+		{% block scripttextbox %}	
+		{{ block.super }}
+		{% endblock %}
+	</body>
+</html>

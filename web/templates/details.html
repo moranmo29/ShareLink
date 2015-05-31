@@ -1,0 +1,69 @@
+{% extends "masterpage.html" %}
+<!DOCTYPE html>
+<html class="no-js">
+	<!--<![endif]-->
+	<head>
+		{% block head %}
+		{{ block.super }}
+		{% endblock %}
+	</head>
+	<body>
+		{% block menuup %}
+		{{ block.super }}
+		{% endblock %}
+		<!-- login box -->
+		{% block loginbox %}
+		{{ block.super }}
+		{% endblock %}
+		<!-- end login box -->
+		{% block mainsite %}
+		{{ block.super }}
+		<h4>
+			<p>How the idea was born?</p>
+		</h4>
+		During our Bachelor's degree in "Azrieli, College of Engineering Jerusalem", at Software Engineering,
+		We used a lot of different links. Every time we sent a link to a friend or group of students,
+		we use the Email or other similar channels.
+		<br>Over time, we were looking for an easy and convenient way to share links, and succeed to manage the links so we can retrieve them whenever we needed: 
+		<br>therefore we create <b>ShareLink</b>.
+		<div class="clr"> </div>
+		<br>
+		<h4>
+			<p>What the site offers?</p>
+		</h4>
+		<h5>
+			<p>User not registered:</p>
+		</h5>
+		<p>A non signed in user can send a link on the <b>'Main-Page'</b> without any registration to any valid email address.</p>
+		<h5>
+			<p>Registered User:</p>
+		</h5>
+		<b>My Saved Links page</b> - user can save all the links are important to him.
+		<br><b>New links page</b> - user can see links received from other users.
+		<br>If the user wants he can:
+		<br>share the link in the group, move the link to the personal page or delete link.
+		<br><b>Contacts</b> - user can add a contact to his own personal page, and share links.
+		<br>If the user wants he can delete a contact.
+		<br><b>Groups</b> - User can create a group and share links there.
+		<br>A user can be member of several groups.
+		<br>If a user has created a group wants to delete her, he can.
+		<h4>
+			<p>About us</p>
+		</h4>
+		Our team is composed of five students at "Azrieli, College of Engineering Jerusalem".
+		<br><b>Team members are:</b> Adi Greenspan, Liran Harari, Daniel Korkotyan,
+		<br>Shiran Mor-Yosef, Moran Mor-Yosef.
+		<br>The web developed as part of a course "software engineering" and open to everyone.
+		<br>If you have suggestions for improvement or any other comment- contact us and let us know.
+		{% endblock %}
+		{<!--	{% block leftmenu %}
+		{{ block.super }}
+		{% endblock %}-->
+		{% block sitefooter %}
+		{{ block.super }}
+		{% endblock %}	
+		{% block scripttextbox %}	
+		{{ block.super }}
+		{% endblock %}
+	</body>
+</html>

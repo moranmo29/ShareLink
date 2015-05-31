@@ -1,0 +1,79 @@
+{% extends "masterpage.html" %}
+<!DOCTYPE html>
+<!--[if gt IE 8]><!--> 
+<html class="no-js">
+	<!--<![endif]-->
+	<head>
+		{% block head %}
+		{{ block.super }}
+		<link rel="stylesheet" type="text/css" href="../static/css/contactUsCSS.css">
+		<script src="../static/js/ContactUs.js"></script>
+		{% endblock %}
+	</head>
+	<body>
+		{% block menuup %}
+		{{ block.super }}
+		{% endblock %}	
+		<!-- login box -->
+		{% block loginbox %}
+		{{ block.super }}
+		{% endblock %}
+		<!-- end login box -->		
+		{% block mainsite %}	
+		{{ block.super }}
+		<div class="ContactArticle">
+			<form name="freecontactform" method="post" action="freecontactformprocess.php" onsubmit="return validate.check(this)">
+				<table width="600px" class="freecontactform">
+					<tr>
+						<td colspan="2">
+							<div class="freecontactformheader">Contact Us</div>
+							<div class="freecontactformmessage"style="font-size:15px">Fields marked with <span class="required_star"> * </span> are mandatory.</div>
+						</td>
+					</tr>
+					<tr>
+						<td valign="top">
+							<label for="Full_Name" class="required" style="font-size:16px">Full Name<span class="required_star"> * </span></label>
+						</td>
+						<td valign="top">
+							<input type="text" name="Full_Name" id="Full_Name" maxlength="80" style="width:230px">
+						</td>
+					</tr>
+					<tr>
+						<td valign="top">
+							<label for="Email_Address" class="required" style="font-size:16px">Email Address<span class="required_star"> * </span></label>
+						</td>
+						<td valign="top">
+							<input type="text" name="Email_Address" id="Email_Address" maxlength="100" style="width:230px">
+						</td>
+					</tr>
+					<tr>
+						<td valign="top">
+							<label for="Your_Message" class="required" style="font-size:16px">Your Message<span class="required_star"> * </span></label>
+						</td>
+						<td valign="top">
+							<textarea style="width:230px;height:160px" name="Your_Message" id="Your_Message" maxlength="2000"></textarea>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2" style="text-align:center" >
+							<br /><br />
+							<button onclick="successAlert()">Send</button>
+							<br /><br />
+							<br /><br />
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		{% endblock %}
+		{% block leftmenu %}
+		{{ block.super }}
+		{% endblock %}
+		{% block sitefooter %}
+		{{ block.super }}
+		{% endblock %}	
+		{% block scripttextbox %}	
+		{{ block.super }}
+		{% endblock %}
+	</body>
+</html>
