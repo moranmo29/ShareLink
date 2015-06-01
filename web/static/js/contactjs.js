@@ -1,5 +1,7 @@
 
-
+function setintheshortmodel(contact_user_email){
+	$('#destintion_user').val(contact_user_email);
+}
 
 
 
