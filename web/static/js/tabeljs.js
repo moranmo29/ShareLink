@@ -12,6 +12,12 @@ function setintheshortmodelsave(url_link,description,from){
 }
 
 
+function setintheshortmodelfromcontact(contact_user_email){
+	$('#usertoshare').val(contact_user_email);
+}
+
+
+
 //this delet link from page saved link
 function deletelink(url_link,description,from_link) {
 	    $.ajax({
