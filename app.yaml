@@ -1,4 +1,4 @@
-application: sharelinktest
+application: sharelink2015
 version: 1
 runtime: python27
 api_version: 1
@@ -22,12 +22,6 @@ handlers:
   script: web.pages.contactuspage.app
   
 - url: /contactspage
-  script: web.pages.contactspage.app
-
-- url: /addContact
-  script: web.pages.contactspage.app
-  
-- url: /deletecontact
   script: web.pages.contactspage.app
   
 - url: /mygroups
@@ -59,6 +53,9 @@ handlers:
   
 - url: /logout
   script: web.pages.sign_up_buttom.app
+
+- url: /sendmail
+  script: web.pages.index.app
   
 - url: /
   script: web.pages.index.app

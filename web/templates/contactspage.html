@@ -4,7 +4,6 @@
    <head>
       {% block head %}
       {{ block.super }}
-	  <script src="../static/js/contactjs.js"></script>
       <link rel="stylesheet" type="text/css" href="../static/css/contactsCSS.css">
       <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
       <script src='http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js'></script>
@@ -44,58 +43,132 @@
       <!-- /.site-header -->
       {% block mainsite %}
       {{ block.super }}
-      
-	  
-	  <div id="shortModaladdmylist" class="modal modal-wide fade" >
-			<div class="modal-dialog" style="margin-left:250px; margin-top:170px; width:70%;">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" 
-							aria-hidden="true">&times;</button>
-					</div>
-					<div class="modal-body">
-						<form id="loginform" name="loginform" method="post" action="index">													
-							<input type="text" name="contact_name" id="nick_name_add" class="txtfield" tabindex="1" style="width:100%; height:35px;" placeholder="contact's Name">									  
-							<input type="url" name="contact_email" id="contact_user_email_add" class="txtfield" tabindex="1" style="width:100%; height:35px;" placeholder="contact's E-mail">
-						</form>
-						<p></p>
-						<p></p>
-						<p></p>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<button id="addButtonList" type="button" class="btn btn-primary" onClick="addContact()">Add!</button>
-					</div>
-				</div>
-				<!-- /.modal-content -->
-			</div>
-			<!-- /.modal-dialog -->
-		</div>
-		<!-- /.modal -->
-	  
-	  
-	  
-	  
-	  	<a data-toggle="modal" href="#shortModaladdmylist" class="myButton" ng-click="launch('create')" style="position:relative; top:0px; left:-28px; height:30px; width:160px;">Add new contact!</a>
+      <span class="btnAdd">
+      <a href="#"><font color="#fff">add contact</font></a></span>
       <br>
       <div class="ContactArticle">
       <div id="ContactMain">
       <ul class="listing">
-	{% for i in contacts %}
-					<li>
-					 <div class="listinfo">
-						<img src="../static/images/usericon.jpg" alt="Listing Image" class="listingimage" />
-						
-						<p><b>{{i.1}}</b><br>{{i.0}}</p>
-					 </div>
-					 <div class="listingbtns">
-					 <span class="listbuttons">
-					<a data-toggle="modal" href="#shortModal" onClick="setintheshortmodel('{{i.0}}')">ShareLink</a></span>
-					 <span class="listbuttons">
-					 <a href="#" onClick="deletecontact('{{i.0}}')">Delete</a></span>
-					 <div class="clear">&nbsp;</div>
-				  </li>
-     {% endfor%}
+      <li>
+         <div class="listinfo">
+            <img src="../static/images/usericon.jpg" alt="Listing Image" class="listingimage" />
+            <h3>contact1</h3>
+         </div>
+         <div class="listingbtns">
+         <span class="listbuttons">
+         <a data-toggle="modal" href="#shortModal">ShareLink</a></span>
+         <span class="listbuttons">
+         <a href="#">Delete</a></span>
+         <div class="clear">&nbsp;</div>
+      </li>
+      <li>
+         <div class="listinfo">
+            <img src="../static/images/usericon.jpg" alt="Listing Image" class="listingimage" />
+            <h3>contact2</h3>
+         </div>
+         <div class="listingbtns">
+         <span class="listbuttons">
+         <a data-toggle="modal" href="#shortModal">ShareLink</a></span>
+         <span class="listbuttons">
+         <a href="#">Delete</a></span>
+         <div class="clear">&nbsp;</div>
+      </li>
+      <li>
+         <div class="listinfo">
+            <img src="../static/images/usericon.jpg" alt="Listing Image" class="listingimage" />
+            <h3>contact3</h3>
+         </div>
+         <div class="listingbtns">
+         <span class="listbuttons">
+         <a data-toggle="modal" href="#shortModal">ShareLink</a></span>
+         <span class="listbuttons">
+         <a href="#">Delete</a></span>
+         <div class="clear">&nbsp;</div>
+      </li>
+      <li>
+         <div class="listinfo">
+            <img src="../static/images/usericon.jpg" alt="Listing Image" class="listingimage" />
+            <h3>contact4</h3>
+         </div>
+         <div class="listingbtns">
+         <span class="listbuttons">
+         <a data-toggle="modal" href="#shortModal">ShareLink</a></span>
+         <span class="listbuttons">
+         <a href="#">Delete</a></span>
+         <div class="clear">&nbsp;</div>
+      </li>
+      <li>
+         <div class="listinfo">
+            <img src="../static/images/usericon.jpg" alt="Listing Image" class="listingimage" />
+            <h3>contact4</h3>
+         </div>
+         <div class="listingbtns">
+         <span class="listbuttons">
+         <a data-toggle="modal" href="#shortModal">ShareLink</a></span>
+         <span class="listbuttons">
+         <a href="#">Delete</a></span>
+         <div class="clear">&nbsp;</div>
+      </li>
+      <li>
+         <div class="listinfo">
+            <img src="../static/images/usericon.jpg" alt="Listing Image" class="listingimage" />
+            <h3>contact4</h3>
+         </div>
+         <div class="listingbtns">
+         <span class="listbuttons">
+         <a data-toggle="modal" href="#shortModal">ShareLink</a></span>
+         <span class="listbuttons">
+         <a href="#">Delete</a></span>
+         <div class="clear">&nbsp;</div>
+      </li>
+      <li>
+         <div class="listinfo">
+            <img src="../static/images/usericon.jpg" alt="Listing Image" class="listingimage" />
+            <h3>contact4</h3>
+         </div>
+         <div class="listingbtns">
+         <span class="listbuttons">
+         <a data-toggle="modal" href="#shortModal">ShareLink</a></span>
+         <span class="listbuttons">
+         <a href="#">Delete</a></span>
+         <div class="clear">&nbsp;</div>
+      </li>
+      <li>
+         <div class="listinfo">
+            <img src="../static/images/usericon.jpg" alt="Listing Image" class="listingimage" />
+            <h3>contact4</h3>
+         </div>
+         <div class="listingbtns">
+         <span class="listbuttons">
+         <a data-toggle="modal" href="#shortModal">ShareLink</a></span>
+         <span class="listbuttons">
+         <a href="#">Delete</a></span>
+         <div class="clear">&nbsp;</div>
+      </li>
+      <li>
+         <div class="listinfo">
+            <img src="../static/images/usericon.jpg" alt="Listing Image" class="listingimage" />
+            <h3>contact4</h3>
+         </div>
+         <div class="listingbtns">
+            <span class="listbuttons">
+            <a data-toggle="modal" href="#shortModal">ShareLink</a></span>
+            <span class="listbuttons">
+            <a href="#">Delete</a></span>
+            <div class="clear">&nbsp;</div>
+      </li>
+      <li>
+      <div class="listinfo">
+      <img src="../static/images/usericon.jpg" alt="Listing Image" class="listingimage" />
+      <h3>contact4</h3>
+      </div>
+      <div class="listingbtns">
+      <span class="listbuttons">
+      <a data-toggle="modal" href="#shortModal">ShareLink</a></span>
+      <span class="listbuttons">
+      <a href="#">Delete</a></span>
+      <div class="clear">&nbsp;</div>
+      </li>
       </div>
       </div>
       <br/>
