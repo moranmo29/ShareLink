@@ -1,0 +1,83 @@
+{% extends "masterpage.html" %}
+<!DOCTYPE html>
+<html class="no-js">
+	<!--<![endif]-->
+	<head>
+	{% block head %}
+	{{ block.super }}
+	<link rel="stylesheet" type="text/css" href="../static/css/tableInNewLinks.css">
+	<script src="../static/js/tabeljs.js"></script>
+	{% endblock %}
+	</head>
+	<body>
+		{% block menuup %}
+		<div id="shortModaladdmylist" class="modal modal-wide fade" >
+			<div class="modal-dialog" style="margin-left:250px; margin-top:170px; width:70%;">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" 
+							aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">
+						<form id="loginform" name="loginform" method="post" action="index">		
+							<input type="text" name="description" id="descriptionadd" class="txtfield" tabindex="1" style="width:100%; height:35px;" placeholder="description">									  
+							<input type="url" name="url" id="urladd" class="txtfield" tabindex="1" style="width:100%; height:35px;" placeholder="copy your link here, must start with http://...">
+							<input type="from" name="from" id="fromadd" style="visibility: hidden">
+						</form>
+						<p></p>
+						<p></p>
+						<p></p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						<button id="addButtonList" type="button" class="btn btn-primary" onClick="addLinkfromnew()">Add!</button>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+		{{ block.super }}
+		{% endblock %}
+		<!-- /.site-header -->
+		{% block mainsite %}
+		{{ block.super }}
+							<div class="mainbar" style="position:relative; left:10px; width:107%; right:30px; overflow:auto; height:500px;">
+								<!-- ==========SCROLL DIV========= -->
+								<table style="position:relative; left:50px; width:140%;">
+									<thead>
+										<tr>
+											<th>From</th>
+											<th>Description</th>
+											<th>Link</th>
+											<th/>
+										</tr>
+									</thead>
+									<tbody>
+									{% for i in urls %}
+										<tr><td><strong> {{i.2}}</strong></td>
+										<td>{{i.1}}</td>
+										<td><a href="{{i.0}} " target="_blank"> {{i.0}}</a></td>				
+										<td><div class="listingbtns"><span class="listbuttons">
+										<a type="button" id="index" data-toggle="modal" href="#shortModaladdmylist" onClick="setintheshortmodelsave('{{i.0}}','{{i.1}}','{{i.2}}')">SaveLink</a></span>
+										<span class="listbuttons">
+										<a href="#" onClick="deletelink('{{i.0}}','{{i.1}}','{{i.2}}')">Delete</a></span></div></td></tr>
+									{% endfor%}
+									</tbody>
+								</table>
+							</div>
+							<input type="from" name="from" id="descriptionadd1" style="visibility: hidden">
+							<input type="from" name="from" id="urladd1" style="visibility: hidden">
+		{% endblock %}
+		{% block leftmenu %}
+		{{ block.super }}
+		{% endblock %}
+		{% block sitefooter %}
+		{{ block.super }}
+		{% endblock %}	
+		{% block scripttextbox %}	
+		{{ block.super }}
+		{% endblock %}
+		
+	</body>
+</html>
