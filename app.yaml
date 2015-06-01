@@ -24,6 +24,12 @@ handlers:
 - url: /contactspage
   script: web.pages.contactspage.app
   
+- url: /addContact
+  script: web.pages.contactspage.app
+  
+- url: /deletecontact
+  script: web.pages.contactspage.app
+  
 - url: /mygroups
   script: web.pages.mygroups.app
   
