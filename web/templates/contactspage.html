@@ -5,6 +5,7 @@
       {% block head %}
       {{ block.super }}
 	  <script src="../static/js/contactjs.js"></script>
+	  <script src="../static/js/tabeljs.js"></script>
       <link rel="stylesheet" type="text/css" href="../static/css/contactsCSS.css">
       <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
       <script src='http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js'></script>
@@ -21,9 +22,9 @@
                </div>
                <div class="modal-body">
                   <form id="loginform" name="loginform" method="post" action="index">													
-                     <input type="text" name="destintion_user" id="destintion_user" class="txtfield" tabindex="1" style="width:100%; height:35px;" placeholder="to...">
-                     <input type="text" name="description" id="description" class="txtfield" tabindex="1" style="width:100%; height:35px;" placeholder="description">								  
-                     <input type="text" name="url" id="url" class="txtfield" tabindex="1" style="width:100%; height:35px;" placeholder="copy your link here.">
+                     <input type="text" name="destintion_user" id="usertoshare" class="txtfield" tabindex="1" style="width:100%; height:35px;" placeholder="to...">
+                     <input type="text" name="description" id="descriptionshare" class="txtfield" tabindex="1" style="width:100%; height:35px;" placeholder="description">								  
+                     <input type="text" name="url" id="urlshare" class="txtfield" tabindex="1" style="width:100%; height:35px;" placeholder="copy your link here.">
                   </form>
                   <p></p>
                   <p></p>
@@ -31,7 +32,8 @@
                </div>
                <div class="modal-footer">
                   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary">Share!</button>
+				  <button id="buttonsharelinktouser" type="button" class="btn btn-primary" onClick="share()">Share!</button>
+
                </div>
             </div>
             <!-- /.modal-content -->
@@ -90,7 +92,7 @@
 					 </div>
 					 <div class="listingbtns">
 					 <span class="listbuttons">
-					<a data-toggle="modal" href="#shortModal" onClick="setintheshortmodel('{{i.0}}')">ShareLink</a></span>
+					<a data-toggle="modal" href="#shortModal" onClick="setintheshortmodelfromcontact('{{i.0}}')">ShareLink</a></span>
 					 <span class="listbuttons">
 					 <a href="#" onClick="deletecontact('{{i.0}}')">Delete</a></span>
 					 <div class="clear">&nbsp;</div>
