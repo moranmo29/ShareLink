@@ -1,7 +1,10 @@
 from google.appengine.ext.webapp import template
 
 import webapp2
+import json
 from models.user import User
+from models.link import Link
+from models.group import Group
 
 class IndexHandler(webapp2.RequestHandler):
 	def get(self):
@@ -14,9 +17,17 @@ class IndexHandler(webapp2.RequestHandler):
 			self.response.write(html)
 			return
 		template_params['useremail'] = user.email
+		group = Group.get_by_id(int(group_id))
+		if group.admin != user.key and user.key not in group.members:
+			template_params['no_access'] = True
+		else:
+			template_params['group_name'] = group.group_name
+			template_params['group_admin'] = group.admin.get().email
+			template_params['group_id'] = group_id
+		
 		html = template.render("web/templates/mygroups.html", template_params)
 		self.response.write(html)
 
 app = webapp2.WSGIApplication([
-	('/mygroups', IndexHandler)
+	('/mygroups/(.*)', IndexHandler)
 ], debug=True)

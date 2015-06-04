@@ -4,7 +4,7 @@ from user import User
 import datetime
 import time
 class Link(ndb.Model):
-	user = ndb.KeyProperty(kind=User)
+	user = ndb.KeyProperty()
 	description = ndb.StringProperty()
 	url_link = ndb.StringProperty() #error when write linkproperty
 	from_link = ndb.StringProperty()
