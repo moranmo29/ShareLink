@@ -6,7 +6,7 @@ class Group(ndb.Model):
 	group_name = ndb.StringProperty()
 	admin = ndb.KeyProperty()
 	members = ndb.KeyProperty(repeated=True)
-	links = ndb.KeyProperty(repeated=True)# link is ok? or string?
+	links = ndb.KeyProperty(repeated=True)
 
 	def getMembers(self):
 		members = []
@@ -14,11 +14,11 @@ class Group(ndb.Model):
 			members.append({"email":member.get().email})
 		return members
 
-	def getLinks(self):
-		links = []
-		for link in self.links:
-			links.append({"description":member.get().description, "url_link":member.get().url_link})
-		return links
+#	def getLinks(self):
+#		links = []
+#		for link in self.links:
+#			links.append({"description":member.get().description, "url_link":member.get().url_link})
+#		return links
 
 	@staticmethod
 	def getGroupsUserAdmin(user):

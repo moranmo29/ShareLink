@@ -1,3 +1,62 @@
+
+
+
+var memberstogroup= [];
+
+
+function addMember(){
+	var member= $('#member_add').val();
+	$('#member_add').val("");
+	if(member.length==0)
+		return;
+	memberstogroup.push(member);
+	var text= "<ul>";
+	for(index=0;index<memberstogroup.length;index++)
+	{
+		text+="<li>"+memberstogroup[index]+"</li>";
+	}
+	text+="</ul>";
+	document.getElementById("addmem").innerHTML=text;
+	
+}
+
+
+function addGroup(){
+	var group_name= $('#group_name_add').val();
+	var members= memberstogroup;
+	if(group_name.length==0)
+		return
+		
+	$.ajax({
+		url:'/addGroup',
+		type:'GET',
+		dataType:'json',
+        data:{group_name:group_name, members: JSON.stringify(members)},
+		success:function(data, status, xhr) {
+			console.log("RELOADING");
+			//alert("add contact was success");
+			window.location.reload();
+			return;
+		},
+		error:function(xhr, status, error) {
+            alert("create group failed!\n");
+			return;
+		}
+	});
+	memberstogroup=[];	
+	window.location.reload();
+	
+}
+
+function cancelGroup(){
+	memberstogroup=[];
+	window.location.reload();
+}
+
+
+
+
+
 function groupsLinkChat(){
 	var linkChat = "<table border=\"0\" style=\"height:600px\">" +
 					"<tr>" +
@@ -104,3 +163,5 @@ function groupsLinkChat(){
 				
 	document.getElementById("innerChatDiv").innerHTML = linkChat;
 }
+
+
