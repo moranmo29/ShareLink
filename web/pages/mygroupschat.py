@@ -26,7 +26,7 @@ class GroupHandler(webapp2.RequestHandler):
 				groupid=group['id']
 				one=[group_name,groupid]
 				groups.append(one)
-			template_params['groups']= groups
+			template_params['groupss']= groups
 		
 		group = Group.get_by_id(int(group_id))
 		if group is None:
