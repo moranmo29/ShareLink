@@ -9,7 +9,8 @@ class Link(ndb.Model):
 	url_link = ndb.StringProperty() #error when write linkproperty
 	from_link = ndb.StringProperty()
 	time_of_enter_the_link=ndb.DateTimeProperty(auto_now_add=True)
-
+	ifInTheGroup=ndb.BooleanProperty(default=False)
+	
 	@staticmethod
 	def getLink(user,link_url,des,from_link):
 		if not link_url:
