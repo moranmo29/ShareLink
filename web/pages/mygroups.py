@@ -25,8 +25,7 @@ class IndexHandler(webapp2.RequestHandler):
 				groupid=group['id']
 				one=[group_name,groupid]
 				groups.append(one)
-			template_params['groups']= groups
-		
+			template_params['groupss']= groups
 		html = template.render("web/templates/mygroups.html", template_params)
 		self.response.write(html)
 		
