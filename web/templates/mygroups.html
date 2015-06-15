@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <html class="no-js">
 <head>
+	
 	{% block head %}
 	{{ block.super }}
 	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
@@ -47,13 +48,13 @@
    
    {% block mainsite %}
 	{{ block.super }}
-	 <div class="mainbar" style="position:relative; top:45px; float:left; height:360px; width:160px; overflow:auto">
+	 <div class="mainbar" style="position:relative; top:45px; float:left; height:360px; width:200px; overflow:auto">
 		
-		<table border="0" style=" width:130px; text-align:center; font-size:150%;">
-			{% for g in groups %}
+		<table style=" width:180px; text-align:center; font-size:150%;">
+		{% for g in groups %}
 			<tr>
 				<td>
-					<a href="#" onclick="groupsLinkChat()">
+					<a href="/mygroups/{{g.1}}" >
 					{{g.0}}
 					</a>
 				<td>
@@ -63,21 +64,17 @@
 				</td>
 				
 				<td style="color:#B20000;">
-					&#x2715
+					<a style="color:#B20000;" href=" " onclick="deleteGroup({{g.1}})" >&#x2715
 				</td>
 			</tr>
-			{% endfor %}
-			
-			
+		{% endfor %}
 		</table>
 		
 	 </div>		<!--  ===========GROUP TABLE DIV=============  -->
 	 
-			<a data-toggle="modal" href="#shortModal" class="myButton" ng-click="launch('create')" style="position:relative; top:0px; left:-150px; height:30px; width:120px;">create group</a>
+			<a data-toggle="modal" href="#shortModal" class="myButton" ng-click="launch('create')" style="position:relative; top:0px; left:-200px; height:30px; width:120px;">create group</a>
 
 		
-	 
-	 
 		<div class="mainbar" style="float:right; height:410px; width:560px; border-radius:15px; border:2px solid #d4d7dc;">
 			
 			<div id="innerChatDiv" class="innerChatDiv" style="height:310px; width:550px; position:relative; left:5px; top:5px; overflow: auto">
@@ -95,7 +92,7 @@
 			<input type="url" placeholder="URL" size="60" style="position:relative; top:30px; left:5px; height:30px; border-width:2px; border-radius:4px; border-top:2px solid #d4d7dc; border-left:2px solid #d4d7dc;">
 		
 		
-				<a href="#" class="myButton" ng-click="launch('create')" style="position:relative; top:30px; left:20px; height:30px; width:70px;">Send</a>
+			<a class="myButton" ng-click="launch('create')" style="position:relative; top:30px; left:20px; height:30px; width:70px;">Send</a>
 
 		
 		</div>		<!--  ==============CHAT BOX================  -->
@@ -105,12 +102,7 @@
 		{% endblock %}
 		{% block leftmenu %}
 		{{ block.super }}
-		{% endblock %}
-		
-		<input type="textbox" id="search_link" placeholder="search Link..." size="30" style="padding-left:40px; position:relative; left:970px; bottom:590px; height:40px; border-color: #597ccf; border-width:2px;  border-radius:4px;" text="">
-		<span class="icon" style="position:relative;"><i class="fa fa-search" style="position:relative; left:710px; bottom:590px;"></i></span>
-
-	
+		{% endblock %}	
 		{% block sitefooter %}
 		{{ block.super }}
 		{% endblock %}
