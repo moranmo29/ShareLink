@@ -1,22 +1,34 @@
-
-
-
 var memberstogroup= [];
 
 
 function addMember(){
 	var member= $('#member_add').val();
-	$('#member_add').val("");
 	if(member.length==0)
 		return;
-	memberstogroup.push(member);
-	var text= "<ul>";
-	for(index=0;index<memberstogroup.length;index++)
-	{
-		text+="<li>"+memberstogroup[index]+"</li>";
-	}
-	text+="</ul>";
-	document.getElementById("addmem").innerHTML=text;
+	$.ajax({
+		url:'/api/add_memebr',
+		type:'GET',
+		dataType:'json',
+        data:{member:member},
+		success:function(data, status, xhr) {
+			//alert("add contact was success");
+			memberstogroup.push(member);
+			var text= "<ul>";
+			for(index=0;index<memberstogroup.length;index++)
+			{
+				text+="<li>"+memberstogroup[index]+"</li>";
+			}
+			text+="</ul>";
+			document.getElementById("addmem").innerHTML=text;
+			$('#member_add').val("");
+			return;
+		},
+		error:function(xhr, status, error) {
+            alert("add person is faild.\n");
+			return;
+		}
+	});
+	
 	
 }
 
@@ -24,18 +36,19 @@ function addMember(){
 function addGroup(){
 	var group_name= $('#group_name_add').val();
 	var members= memberstogroup;
-	if(group_name.length==0)
+	if(group_name.length==0){
+		 alert("must enter name group.\n");
 		return
+	}
 		
 	$.ajax({
-		url:'/addGroup',
+		url:'/api/create_group',
 		type:'GET',
 		dataType:'json',
         data:{group_name:group_name, members: JSON.stringify(members)},
 		success:function(data, status, xhr) {
-			console.log("RELOADING");
-			//alert("add contact was success");
-			window.location.reload();
+			window.location.reload();	
+			memberstogroup=[];	
 			return;
 		},
 		error:function(xhr, status, error) {
@@ -43,8 +56,6 @@ function addGroup(){
 			return;
 		}
 	});
-	memberstogroup=[];	
-	window.location.reload();
 	
 }
 
@@ -54,114 +65,48 @@ function cancelGroup(){
 }
 
 
+function deleteGroup(groupid){
+	$.ajax({
+		url:'/api/delete_group',
+		type:'GET',
+		dataType:'json',
+        data:{groupid:groupid},
+		success:function(data, status, xhr) {
+			window.location.reload();
+		},
+		error:function(xhr, status, error) {
+            alert("remove group failed!\n");
+			return;
+		}
+	});
+	
+}
 
 
-
-function groupsLinkChat(){
-	var linkChat = "<table border=\"0\" style=\"height:600px\">" +
-					"<tr>" +
-						"<td>" +
-							"<b>Bilbo_Baggins:</b>" +
-							"<br>" +
-							"<b>" +
-							"&nbsp &nbsp A Map Of Mordor" +
-							"</b>" +
-							"<p style=\"margin-left:14px; width:500px; word-wrap: break-word;\">" +
-							"<a href=\"http://lotrproject.com/map/#zoom=3&lat=-1545&lon=1428&layers=BTTTTTTTT\">http://lotrproject.com/map/#zoom=3&lat=-1545&lon=1428&layers=BTTTTTTTT</a>" +
-							"</p>" +
-						"</td>" +
-					"</tr>" +
-					
-					"<tr>" +
-						"<td>" +
-							"<b>Gandalf1271:</b>" +
-							"<br>" +
-							"<b>" +
-							"&nbsp &nbsp Information About The ONE"+
-							"</b>" +
-							"<p style=\"margin-left:14px; width:500px; word-wrap: break-word;\">" +
-							"<a href=\"http://lotr.wikia.com/wiki/One_Ring\">http://lotr.wikia.com/wiki/One_Ring</a>" +
-							"</p>" +
-						"</td>" +
-					"</tr>" +
-					
-					"<tr>" +
-						"<td>" +
-							"<b>Bilbo_Baggins:</b>" +
-							"<br>" +
-							"<b>" +
-							"&nbsp &nbsp Most Funny Memes Of Sauron"+
-							"</b>" +
-							"<p style=\"margin-left:14px; width:500px; word-wrap: break-word;\">" +
-							"<a href=\"http://www.memecenter.com/search/sauron\">http://www.memecenter.com/search/sauron</a>" +
-							"</p>" +
-						"</td>" +
-					"</tr>" +
-					
-					
-					"<tr>" +
-						"<td>" +
-							"<b>Gollum_Gollum:</b>" +
-							"<br>" +
-							"<b>" +
-							"&nbsp &nbsp Bagginses Here Are Some Hard Riddles Gollum Gollum"+
-							"</b>" +
-							"<p style=\"margin-left:14px; width:500px; word-wrap: break-word;\">" +
-							"<a href=\"http://www.quora.com/What-are-some-difficult-riddles-that-have-an-answer-so-obvious-that-it-will-make-a-person-slap-their-head\">http://www.quora.com/What-are-some-difficult-riddles-that-have-an-answer-so-obvious-that-it-will-make-a-person-slap-their-head</a>" +
-							"</p>" +
-						"</td>" +
-					"</tr>" +
-					
-					
-					
-					"<tr>" +
-						"<td>" +
-							"<b>IAmFrodoB:</b>" +
-							"<br>" +
-							"<b>" +
-							"&nbsp &nbsp People Love Me 2!!!"+
-							"</b>" +
-							"<p style=\"margin-left:14px; width:500px; word-wrap: break-word;\">" +
-							"<a href=\"http://giphy.com/search/frodo/2\">http://giphy.com/search/frodo/2</a>" +
-							"</p>" +
-						"</td>" +
-					"</tr>" +
-					
-					
-					
-					"<tr>" +
-						"<td>" +
-							"<b>SamGam80</b>" +
-							"<br>" +
-							"<b>" +
-							"&nbsp &nbsp Check This Cocking Site"+
-							"</b>" +
-							"<p style=\"margin-left:14px; width:500px; word-wrap: break-word;\">" +
-							"<a href=\"https://wiki-cook.appspot.com/\">https://wiki-cook.appspot.com/</a>" +
-							"</p>" +
-						"</td>" +
-					"</tr>" +
-					
-					
-					
-					"<tr>" +
-						"<td>" +
-							"<b>IAmFrodoB:</b>" +
-							"<br>" +
-							"<b>" +
-							"&nbsp &nbsp People Love Me"+
-							"</b>" +
-							"<p style=\"margin-left:14px; width:500px; word-wrap: break-word;\">" +
-							"<a href=\"http://www.frodoforever.com/\">http://www.frodoforever.com/</a>" +
-							"</p>" +
-						"</td>" +
-					"</tr>" +
-					
-					
-					
-				"</table>";
-				
-	document.getElementById("innerChatDiv").innerHTML = linkChat;
+function addLinkGroup(groupid){
+	var des= $('#description_add_to_the_group').val();
+	var url_link= $('#url_add_to_the_group').val();
+	if(url_link.length==0){
+		 alert("must enter url link add to the group.\n");
+		return
+	}
+		
+	$.ajax({
+		url:'/api/add_link_group',
+		type:'GET',
+		dataType:'json',
+        data:{des:des, url_link:url_link,groupid:groupid},
+		success:function(data, status, xhr) {
+			window.location.reload();
+			$('#description_add_to_the_group').val("");
+			$('#url_add_to_the_group').val("");
+			return;
+		},
+		error:function(xhr, status, error) {
+            alert("add link to the group failed!\n");
+			return;
+		}
+	});
 }
 
 
