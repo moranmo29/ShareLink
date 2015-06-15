@@ -1,4 +1,4 @@
-application: sharelinktest
+application: sharelink2015
 version: 1
 runtime: python27
 api_version: 1
@@ -38,6 +38,21 @@ handlers:
   
 - url: /mygroups
   script: web.pages.mygroups.app
+
+- url: /mygroups/(.*)
+  script: web.pages.mygroupschat.app
+  
+- url: /api/create_group
+  script: api.create_group.app
+
+- url: /api/add_link_group
+  script: api.add_link_group.app  
+  
+- url: /api/add_memebr
+  script: api.add_memebr.app
+
+- url: /api/delete_group
+  script: api.delete_group.app
   
 - url: /mysavedlinks
   script: web.pages.mysavedlinks.app
