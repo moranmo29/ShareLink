@@ -49,12 +49,11 @@
    {% block mainsite %}
 	{{ block.super }}
 	 <div class="mainbar" style="position:relative; top:45px; float:left; height:360px; width:200px; overflow:auto">
-		
 		<table style=" width:180px; text-align:center; font-size:150%;">
-		{% for g in groups %}
+		{% for g in groupss %}
 			<tr>
 				<td>
-					<a href="/mygroups/{{g.1}}" >
+					<a href="/mygroups/{{g.1}}" />
 					{{g.0}}
 					</a>
 				<td>
@@ -64,7 +63,7 @@
 				</td>
 				
 				<td style="color:#B20000;">
-					<a style="color:#B20000;" href=" " onclick="deleteGroup({{g.1}})" >&#x2715
+					<a style="color:#B20000;" href=" " onclick="deleteGroup({{g.1}})" />&#x2715
 				</td>
 			</tr>
 		{% endfor %}
