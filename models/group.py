@@ -7,18 +7,30 @@ class Group(ndb.Model):
 	admin = ndb.KeyProperty()
 	members = ndb.KeyProperty(repeated=True)
 	links = ndb.KeyProperty(repeated=True)
-
+	
+	@staticmethod
+	def getGroup(admin,group_name):
+		if not group_name:
+			self.error(403)
+			self.response.write('Empty group name ')
+			return
+		
+		group=Group.query(Group.admin == admin , Group.group_name == group_name).get()
+		if group:
+			return group
+		return None
+		
 	def getMembers(self):
 		members = []
 		for member in self.members:
 			members.append({"email":member.get().email})
 		return members
 
-#	def getLinks(self):
-#		links = []
-#		for link in self.links:
-#			links.append({"description":member.get().description, "url_link":member.get().url_link})
-#		return links
+	def getLinks(self):
+		links = []
+		for link in self.links:
+			links.append({"email":link.get().user.get().email,"description":link.get().description, "url_link":link.get().url_link,"time_of_enter_the_link":link.get().time_of_enter_the_link})
+		return links
 
 	@staticmethod
 	def getGroupsUserAdmin(user):
@@ -44,10 +56,21 @@ class Group(ndb.Model):
 			})
 
 		return groups_arr
-
+	
 	@staticmethod
 	def getAllGroups(user):
 		arr_a = Group.getGroupsUserAdmin(user)
 		arr_b = Group.getGroupsUserMember(user)
 
 		return arr_a + arr_b
+		
+	def remove_group(self):
+		self.key.delete()
+		return
+		
+	def remove_group_member(self,user):
+		for member in self.members:
+			if member.get()==user.key:
+				member.get().key.delete()
+				return True
+		return False
