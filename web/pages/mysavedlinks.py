@@ -27,8 +27,9 @@ class IndexHandler(webapp2.RequestHandler):
 				datatime=link.time_of_enter_the_link
 				fromlink=link.from_link
 				if fromlink is None:
-					urlandlink =[url,des,datatime]
-					urls.append(urlandlink)
+					if link.ifInTheGroup == False:
+						urlandlink =[url,des,datatime]
+						urls.append(urlandlink)
 			template_params['urls'] = urls
 		template_params['useremail'] = user.email
 		html = template.render("web/templates/mysavedlinks.html", template_params)
