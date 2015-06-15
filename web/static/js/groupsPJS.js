@@ -38,7 +38,7 @@ function addGroup(){
 	var members= memberstogroup;
 	if(group_name.length==0){
 		 alert("must enter name group.\n");
-		return
+		return;
 	}
 		
 	$.ajax({
@@ -66,12 +66,14 @@ function cancelGroup(){
 
 
 function deleteGroup(groupid){
+	console.log(5+7);
 	$.ajax({
 		url:'/api/delete_group',
 		type:'GET',
 		dataType:'json',
         data:{groupid:groupid},
 		success:function(data, status, xhr) {
+	        alert("success to remove group!\n");
 			window.location.reload();
 		},
 		error:function(xhr, status, error) {
@@ -88,7 +90,7 @@ function addLinkGroup(groupid){
 	var url_link= $('#url_add_to_the_group').val();
 	if(url_link.length==0){
 		 alert("must enter url link add to the group.\n");
-		return
+		return;
 	}
 		
 	$.ajax({
