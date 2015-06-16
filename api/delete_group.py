@@ -21,9 +21,12 @@ class deleteGroup(webapp2.RequestHandler):
 			return
 		if group_to_remove.admin == user.key:
 			group_to_remove.remove_group()
+		else:
+			group_to_remove.removeUserFromTheGroup(user)			
 		time.sleep(0.5)
 		self.response.set_cookie('our_token', str(user.key.id()))
 		self.response.write(json.dumps({'status':'OK'}))
+		
 		return
 
 app = webapp2.WSGIApplication([
