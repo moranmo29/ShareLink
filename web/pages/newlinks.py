@@ -16,7 +16,7 @@ class IndexHandler(webapp2.RequestHandler):
 			return
 		linkslist=Link.getAllLinksPerUser(user)	
 		#sorted(linkslist, key=lambda link: link.time_of_enter_the_link')   # sort by age
-		urls = []
+		newurls = []
 		template_params = {}
 		if linkslist:
 			for link in linkslist:
@@ -25,8 +25,8 @@ class IndexHandler(webapp2.RequestHandler):
 				fromlink=link.from_link
 				if fromlink is not None:
 					urlandlink =[url,des,fromlink]
-					urls.append(urlandlink)
-			template_params['urls'] = urls
+					newurls.append(urlandlink)
+			template_params['newurls'] = newurls
 		template_params['useremail'] = user.email
 		html = template.render("web/templates/newlinks.html", template_params)
 		self.response.write(html)
