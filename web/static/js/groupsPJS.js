@@ -55,8 +55,8 @@ function addGroup(){
             alert("create group failed!\n");
 			return;
 		}
-	});
 	
+	});
 }
 
 function cancelGroup(){
