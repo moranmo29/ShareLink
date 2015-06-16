@@ -68,9 +68,13 @@ class Group(ndb.Model):
 		self.key.delete()
 		return
 		
-	def remove_group_member(self,user):
+	def removeUserFromTheGroup(self,user):
+		members = []
 		for member in self.members:
-			if member.get()==user.key:
-				member.get().key.delete()
-				return True
-		return False
+			if member.get().key != user.key:
+				members.append(member)
+		for newM in members:
+			members.append(newM.key)
+		self.members=members
+		self.put()
+		return
