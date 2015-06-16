@@ -11,7 +11,10 @@ function setintheshortmodelsave(url_link,description,from){
 	$('#fromadd').val(from);
 }
 
-
+function setintheshortmodelsaveList(url_link,description,from){
+	$('#descriptionadd').val(description);
+	$('#urladd').val(url_link);
+}
 function setintheshortmodelfromcontact(contact_user_email){
 	$('#usertoshare').val(contact_user_email);
 }
@@ -68,6 +71,7 @@ function share(){
 	
 
 }
+
 function addLinkfromnew(from_link){
 	var description = $('#descriptionadd1').val();
     var url_link = $('#urladd1').val();
