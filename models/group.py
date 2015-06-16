@@ -65,6 +65,8 @@ class Group(ndb.Model):
 		return arr_a + arr_b
 		
 	def remove_group(self):
+		for link in self.links:
+			link.get().key.delete()
 		self.key.delete()
 		return
 		
@@ -73,8 +75,6 @@ class Group(ndb.Model):
 		for member in self.members:
 			if member.get().key != user.key:
 				members.append(member)
-		for newM in members:
-			members.append(newM.key)
 		self.members=members
 		self.put()
 		return
