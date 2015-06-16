@@ -51,7 +51,7 @@
 	 <div class="mainbar" style="position:relative; top:45px; float:left; height:360px; width:200px; overflow:auto">
 		
 		<table style=" width:180px; text-align:center; font-size:150%;">
-		{% for g in groups %}
+		{% for g in groupss %}
 			<tr>
 				<td>
 					<a href="/mygroups/{{g.1}}" >
@@ -64,7 +64,7 @@
 				</td>
 				
 				<td style="color:#B20000;">
-					<a style="color:#B20000;" href="" onclick="deleteGroup({{g.1}})" >&#x2715
+					<span style="color:#B20000;cursor:pointer;"  onclick="deleteGroup({{g.1}})" />&#x2715
 				</td>
 			</tr>
 			{% endfor %}
@@ -77,7 +77,7 @@
 		<p  style="position:relative; left:25px;"><font size="4">{{group_name}}</font></p>
 		<div class="mainbar" style="float:right; height:410px; width:560px; border-radius:15px; border:2px solid #d4d7dc;">
 			
-			<div id="innerChatDiv" class="innerChatDiv" style="height:310px; width:550px; position:relative; left:5px; top:5px; overflow: auto ">
+			<div id="innerChatDiv" class="innerChatDiv" style="height:310px; width:550px; position:relative; left:5px; top:5px; overflow: auto ">				
 				<table border="0">
 					{% for link in links%}
 					<tr>
@@ -111,18 +111,12 @@
 
 		
 		</div>		<!--  ==============CHAT BOX================  -->
-	 
-	 
-	 
 		{% endblock %}
 		{% block leftmenu %}
 		{{ block.super }}
 		{% endblock %}
-		
 		<input type="textbox" id="search_link" placeholder="search Link..." size="30" style="padding-left:40px; position:relative; left:970px; bottom:590px; height:40px; border-color: #597ccf; border-width:2px;  border-radius:4px;" text="">
 		<span class="icon" style="position:relative;"><i class="fa fa-search" style="position:relative; left:710px; bottom:590px;"></i></span>
-
-	
 		{% block sitefooter %}
 		{{ block.super }}
 		{% endblock %}
