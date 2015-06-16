@@ -3,6 +3,7 @@ from google.appengine.ext.webapp import template
 import webapp2
 from models.user import User
 from models.contact import Contact
+from models.link import Link
 import json
 
 
@@ -17,6 +18,20 @@ class IndexHandler(webapp2.RequestHandler):
 			self.response.write(html)
 			return
 		template_params['useremail'] = user.email
+		#newlinks
+		linkslist=Link.getAllLinksPerUser(user)	
+		newurls = []
+		template_params = {}
+		if linkslist:
+			for link in linkslist:
+				url = link.url_link
+				des = link.description
+				fromlink=link.from_link
+				if fromlink is not None:
+					urlandlink =[url,des,fromlink]
+					newurls.append(urlandlink)
+			template_params['newurls'] = newurls
+		#newlinks
 		contactlist= Contact.getAllContactsPerUser(user)
 		contacts= []
 		if contactlist:
