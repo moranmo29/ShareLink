@@ -2,6 +2,8 @@ from google.appengine.ext.webapp import template
 
 import webapp2
 from models.user import User
+from models.link import Link
+
 
 class IndexHandler(webapp2.RequestHandler):
 	def get(self):
@@ -16,7 +18,20 @@ class IndexHandler(webapp2.RequestHandler):
 		if self.request.cookies.get('our_token'):    #the cookie that should contain the access token!
 			user = User.checkToken(self.request.cookies.get('our_token'))
 		if user:
-			template_params['useremail'] = user.email		
+			template_params['useremail'] = user.email
+			#newlinks
+			linkslist=Link.getAllLinksPerUser(user)	
+			newurls = []
+			if linkslist:
+				for link in linkslist:
+					url = link.url_link
+					des = link.description
+					fromlink=link.from_link
+					if fromlink is not None:
+						urlandlink =[url,des,fromlink]
+						newurls.append(urlandlink)
+				template_params['newurls'] = newurls
+			#newlinks			
 		html = template.render("web/templates/details.html", template_params)
 		self.response.write(html)
 
