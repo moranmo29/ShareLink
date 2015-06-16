@@ -20,7 +20,6 @@ class IndexHandler(webapp2.RequestHandler):
 		if self.request.cookies.get('our_token'):    #the cookie that should contain the access token!
 			user = User.checkToken(self.request.cookies.get('our_token'))
 		if user:
-			template_params['useremail'] = user.email
 			linkslist=Link.getAllLinksPerUser(user)	
 			newurls = []
 			template_params = {}
@@ -33,6 +32,7 @@ class IndexHandler(webapp2.RequestHandler):
 						urlandlink =[url,des,fromlink]
 						newurls.append(urlandlink)
 			template_params['newurls'] = newurls
+			template_params['useremail'] = user.email
 		html = template.render("web/templates/index.html", template_params)
 		self.response.write(html)
 
