@@ -87,8 +87,7 @@ function deleteGroup(groupid){
 function addLinkGroup(groupid){
 	var des= $('#description_add_to_the_group').val();
 	var url_link= $('#url_add_to_the_group').val();
-	if(url_link.length==0){
-		 alert("must enter url link add to the group.\n");
+	if( url_link.length!=0 && !ValidURL(url_link)){
 		return;
 	}
 		
@@ -111,3 +110,12 @@ function addLinkGroup(groupid){
 }
 
 
+function ValidURL(str) {
+  var regexp = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/
+  if(!regexp.test(str)) {
+    alert("Please enter a valid URL.");
+    return false;
+  } else {
+    return true;
+  }
+}
