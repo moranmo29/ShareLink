@@ -66,15 +66,14 @@ function cancelGroup(){
 
 
 function deleteGroup(groupid){
-	console.log(5+7);
 	$.ajax({
 		url:'/api/delete_group',
 		type:'GET',
 		dataType:'json',
         data:{groupid:groupid},
 		success:function(data, status, xhr) {
-	        alert("success to remove group!\n");
-			window.location.reload();
+			window.location.href="/mygroups";
+			return;
 		},
 		error:function(xhr, status, error) {
             alert("remove group failed!\n");
