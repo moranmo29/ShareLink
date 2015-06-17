@@ -4,6 +4,8 @@ import json
 
 import webapp2
 from models.user import User
+from models.link import Link
+
 
 class IndexHandler(webapp2.RequestHandler):
 	def get(self):
