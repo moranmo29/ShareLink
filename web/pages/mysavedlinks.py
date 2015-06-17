@@ -28,12 +28,11 @@ class IndexHandler(webapp2.RequestHandler):
 				if fromlink is not None:
 					urlandlink =[url,des,fromlink]
 					newurls.append(urlandlink)
-			template_params['newurls'] = newurls
+		template_params['newurls'] = newurls
 		#newlinks
 		linkslist=Link.getAllLinksPerUser(user)	
 		#sorted(linkslist, key=lambda link: link.time_of_enter_the_link')   # sort by age
 		urls = []
-		template_params = {}
 		if linkslist:
 			for link in linkslist:
 				url = link.url_link
