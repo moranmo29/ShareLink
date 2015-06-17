@@ -38,9 +38,9 @@ class Link(ndb.Model):
 		if from_link == "None" :
 			link=Link.getLink(user,link_url,des,None)
 		link=Link.getLink(user,link_url,des,from_link)		
-		#link=Link.query(Link.user == user , Link.description == des , Link.url_link == link_url , Link.from_link==None).get()
 		if link is not None:
-			link.key.delete();
+			if link.ifInTheGroup is False:
+				link.key.delete();
 		return
 		
 	@staticmethod
