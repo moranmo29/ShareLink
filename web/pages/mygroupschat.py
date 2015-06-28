@@ -61,7 +61,8 @@ class GroupHandler(webapp2.RequestHandler):
 				link_date= link['time_of_enter_the_link']
 				one=[link_user_name,link_description,link_url_link,link_date]
 				links.append(one)
-				links.reverse()
+			sorted(links, key=lambda links: one[3])  
+			links.reverse()
 			template_params['links']= links			
 			
 		html = template.render('web/templates/mygroupschat.html', template_params)
