@@ -73,6 +73,9 @@
 				<!--<span id='useremail'>{{useremail}}</span><br/>-->
 				{{ block.super }}
 							<a data-toggle="modal" href="#shortModaladdmylist" class="myButton" ng-click="launch('create')" style="position:relative; top:0px; left:-28px; height:30px; width:130px;">Add new Link!</a>
+							<!--#2/2.1 Search text BOX-->
+							<input type="text" id="search" placeholder="Search Link" onkeyup="searchLink()"></input>
+							<!--END Search text BOX-->
 							<!--<div class="box" style="margin-top:-48px; border-bottom: 2cm;">
 								<div class="container-1">
 									<span class="icon"><i class="fa fa-search"></i></span>
