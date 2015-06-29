@@ -44,7 +44,13 @@ handlers:
   
 - url: /api/create_group
   script: api.create_group.app
+  
+- url: /api/delete_member_from_the_group
+  script: api.delete_member_from_the_group.app
 
+- url: /api/add_more_member
+  script: api.add_more_member.app  
+  
 - url: /api/add_link_group
   script: api.add_link_group.app  
   
