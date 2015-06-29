@@ -25,7 +25,16 @@ class Group(ndb.Model):
 		for member in self.members:
 			members.append({"email":member.get().email})
 		return members
+		
+	def getAdminOfTheGroup(self):
+		return({"email":self.admin.get().email})
 
+	def checkIfinTheMember(self,user):
+		for member in self.members:
+			if member.get().key == user.key:
+				return True
+		return False
+		
 	def getLinks(self):
 		links = []
 		for link in self.links:
