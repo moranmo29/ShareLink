@@ -97,7 +97,7 @@
 									<!--<script> writeTheValueInTabelMySavedLinks();</script>  {{forloop.counter0}}-->
 									{% for i in urls %}
 										<tr><td>{{i.1}}</td>
-										<td><a href="{{i.0}}" target="blank">{{i.0}}</a></td>
+										<td><a href="{{i.0}}" target="blank"><div style="position:relative;width:430px;overflow:hidden">{{i.0}}</div></a></td><!--NEW div: SHORT LINK IN TABLE,<pre> option: other view url-->
 										<td><div class="listingbtns"><span class="listbuttons">
 										<a data-toggle="modal" href="#shortModal" onClick="setintheshortmodel('{{i.0}}','{{i.1}}')">ShareLink</a></span>
 										<span class="listbuttons">
