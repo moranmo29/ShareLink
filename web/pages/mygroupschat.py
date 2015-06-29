@@ -29,7 +29,7 @@ class GroupHandler(webapp2.RequestHandler):
 					urlandlink =[url,des,fromlink]
 					newurls.append(urlandlink)
 			template_params['newurls'] = newurls
-		#newlinks
+		
 		template_params['useremail'] = user.email
 		grouplist= Group.getAllGroups(user)
 		groups= []
@@ -50,6 +50,9 @@ class GroupHandler(webapp2.RequestHandler):
 			self.response.write(html)
 			return
 		else:
+			template_params['admin_access'] =False
+			if group.admin == user.key:
+				template_params['admin_access'] =True		
 			template_params['group_name'] = group.group_name
 			template_params['group_id'] = group_id
 			linksInGroup=group.getLinks()
@@ -64,6 +67,9 @@ class GroupHandler(webapp2.RequestHandler):
 			sorted(links, key=lambda links: one[3])  
 			links.reverse()
 			template_params['links']= links			
+			all_Member_In_The_Group=group.getMembers()
+			all_Member_In_The_Group.insert(0,group.getAdminOfTheGroup())
+			template_params['members']=all_Member_In_The_Group 			
 			
 		html = template.render('web/templates/mygroupschat.html', template_params)
 		self.response.write(html)
