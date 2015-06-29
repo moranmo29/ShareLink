@@ -1,8 +1,14 @@
 var memberstogroup= [];
+var memberstogroupExsistGroup= [];
 
 
-function addMember(){
+function addMember( booleanVar){
 	var member= $('#member_add').val();
+	var id="addmem";
+	if(booleanVar == true){
+		member = $('#member_add_exsist_group').val();
+		id="addmember";
+	}
 	if(member.length==0)
 		return;
 	$.ajax({
@@ -12,16 +18,31 @@ function addMember(){
         data:{member:member},
 		success:function(data, status, xhr) {
 			//alert("add contact was success");
-			memberstogroup.push(member);
-			var text= "<ul>";
-			for(index=0;index<memberstogroup.length;index++)
-			{
-				text+="<li>"+memberstogroup[index]+"</li>";
+			if (booleanVar){
+				memberstogroupExsistGroup.push(member);
+				var text= "<ul>";
+				for(index=0;index<memberstogroupExsistGroup.length;index++)
+				{
+					text+="<li>"+memberstogroupExsistGroup[index]+"</li>";
+				}
+				text+="</ul>";
+				$('#member_add_exsist_group').val("");				
 			}
-			text+="</ul>";
-			document.getElementById("addmem").innerHTML=text;
-			$('#member_add').val("");
-			return;
+			else{
+				memberstogroup.push(member);
+				var text= "<ul>";
+				for(index=0;index<memberstogroup.length;index++)
+				{
+					text+="<li>"+memberstogroup[index]+"</li>";
+				}
+				text+="</ul>";
+				$('#member_add').val("");
+			}				
+			document.getElementById(id).innerHTML=text;
+			
+		return;
+			
+			
 		},
 		error:function(xhr, status, error) {
             alert("add person is faild.\n");
@@ -63,9 +84,27 @@ function cancelGroup(){
 	memberstogroup=[];
 	window.location.reload();
 }
+function deleteMemberFromTheGroup(groupid,emailMember){
+	$.ajax({
+		url:'/api/delete_member_from_the_group',
+		type:'GET',
+		dataType:'json',
+        data:{groupid:groupid,emailMember:emailMember},
+		success:function(data, status, xhr) {
+			return;
+		},
+		error:function(xhr, status, error) {
+            alert("remove member from the group failed!\n");
+			return;
+		}
+	});
 
+}
 
 function deleteGroup(groupid){
+var result = confirm("are you sure you want to delete this group?");
+	if (result) {
+
 	$.ajax({
 		url:'/api/delete_group',
 		type:'GET',
@@ -80,7 +119,27 @@ function deleteGroup(groupid){
 			return;
 		}
 	});
+	}
+}
+
+function addMoreMemberOnExsistGroup(group_id){
+	var members= memberstogroupExsistGroup;
+	$.ajax({
+		url:'/api/add_more_member',
+		type:'GET',
+		dataType:'json',
+        data:{group_id:group_id, members: JSON.stringify(members)},
+		success:function(data, status, xhr) {
+			window.location.reload();	
+			memberstogroupExsistGroup=[];	
+			return;
+		},
+		error:function(xhr, status, error) {
+            alert("add members to the group failed!\n");
+			return;
+		}
 	
+	});
 }
 
 
@@ -118,4 +177,18 @@ function ValidURL(str) {
   } else {
     return true;
   }
+}
+
+
+function replaceDiv(){
+
+   d1 = document.getElementById('change_when_press_the_button');
+   d2 = document.getElementById('change_when_press_the_button_and_what_to_add');
+   if( d2.style.display == "none" )
+   {
+      d1.style.display = "none";
+      d2.style.display = "block";
+	  document.getElementById("bigger_the_model").style.width = "620px";
+	  document.getElementById("addMore").style.display = "inline";
+   }
 }
