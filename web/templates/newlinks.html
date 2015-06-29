@@ -42,7 +42,7 @@
 		<!-- /.site-header -->
 		{% block mainsite %}
 		{{ block.super }}
-							<div class="mainbar" style="position:relative; left:10px; width:107%; right:30px; overflow:auto; height:500px;">
+							<div class="mainbar" style="position:relative; right:30px; overflow:auto; height:700px;">
 								<!-- ==========SCROLL DIV========= -->
 								<table style="position:relative; left:50px; width:140%;">
 									<thead>
@@ -57,7 +57,7 @@
 									{% for i in newurls %}
 										<tr><td><strong> {{i.2}}</strong></td>
 										<td>{{i.1}}</td>
-										<td><a href="{{i.0}} " target="_blank"> <div style="position:relative;width:340px;overflow:hidden">{{i.0}}</div></a></td> <!--NEW: SHORT LINK TABLE: DIV-->				
+										<td><a href="{{i.0}} " target="_blank"> <div style="position:relative;width:170px;overflow:hidden">{{i.0}}</div></a></td> <!--NEW: SHORT LINK TABLE: DIV-->				
 										<td><div class="listingbtns"><span class="listbuttons">
 										<a type="button" id="index" data-toggle="modal" href="#shortModaladdmylist" onClick="setintheshortmodelsave('{{i.0}}','{{i.1}}','{{i.2}}')">SaveLink</a></span>
 										<span class="listbuttons">
