@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html class="no-js">
 <head>
-	
 	{% block head %}
 	{{ block.super }}
 	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
@@ -10,13 +9,12 @@
 	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 	<script src="../static/js/groupsPJS.js"></script>
 	<script src="../static/js/tabeljs.js"></script>
-
 	<script src='http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js'></script>
 	{% endblock %}
 </head>
 <body>
 	{% block menuup %}
-	<div id="shortModaladdmylist" class="modal modal-wide fade" >
+		<div id="shortModaladdmylist" class="modal modal-wide fade" >
 			<div class="modal-dialog" style="margin-left:250px; margin-top:170px; width:70%;">
 				<div class="modal-content">
 					<div class="modal-header">
@@ -52,7 +50,7 @@
 						<form id="loginform" name="loginform" method="post" action="index">													
 							<input type="text" name="destintion_user" id="group_name_add" class="txtfield" tabindex="1" style="width:100%; height:35px;" placeholder="group name ">
 							<input type="text" name="description" id="member_add" class="txtfield" tabindex="1" style="width:89%; float:left; height:35px;" placeholder="enter member user name">									  
-							&nbsp;&nbsp;<button type="button" class="btn btn-primary" onclick="addMember()">add</button>
+							&nbsp;&nbsp;<button type="button" class="btn btn-primary" onclick="addMember(false)">add</button>
 							<br><br>
 							<p id="addmem"></p>
 						</form>
@@ -63,6 +61,52 @@
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal" onclick="cancelGroup()">Close</button>
 						<button type="button" class="btn btn-primary" onclick="addGroup()">create</button>
+					</div>
+				</div>
+				<!-- /.modal-content -->
+			</div>
+			<!-- /.modal-dialog -->
+		</div>
+
+		<div id="shortModalDetailsGroup" class="modal modal-wide fade">
+			<div class="modal-dialog" id="bigger_the_model"style="margin-left:500px; margin-top:100px; width:290px; ">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" 
+							aria-hidden="true">&times;</button>
+					</div>
+					<div class="modal-body">
+					{% for g in members %}
+						{% if forloop.counter == 1%}
+							<b>{{g.email}}</b>&nbsp; (admin)
+						{% else %}
+							{{g.email}}
+							&nbsp;&nbsp;&nbsp;&nbsp;
+							{% if admin_access  %}
+								<span style="cursor:pointer;"  onclick="deleteMemberFromTheGroup({{group_id}},'{{g.email}}')" /><i class="fa fa-trash-o"></i>
+							{% endif %}
+						{% endif %}
+						<br/>
+					{% endfor %}
+						<p></p>
+						<p></p>
+						<p></p>
+						<br/><br/><br/>
+						{% if admin_access  %}
+						<div id="change_when_press_the_button">
+							<button id="addMoreMember" type="button" class="btn btn-primary" style="position:relative; left:40px;" onclick="replaceDiv()"  >Add more member</button>
+						</div>
+						<div id="change_when_press_the_button_and_what_to_add" style="display:none;">
+							<input type="text" name="description" id="member_add_exsist_group" class="txtfield" tabindex="1" style="width:89%; float:left; height:35px;" placeholder="enter user name">									  
+							&nbsp;&nbsp;<button type="button" class="btn btn-primary" onclick="addMember(true)">add</button>
+							<br><br>
+							<p id="addmember"></p>
+						</div>
+						{% endif %}
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal" onclick="cancelGroup()">Close</button>
+						<button id="addMore" style="display:none;" type="button" class="btn btn-primary" onclick="addMoreMemberOnExsistGroup({{group_id}})" >Add</button>
 					</div>
 				</div>
 				<!-- /.modal-content -->
@@ -89,8 +133,8 @@
 					&#x02758
 				</td>
 				
-				<td style="color:#B20000;">
-					<span style="color:#B20000;cursor:pointer;"  onclick="deleteGroup({{g.1}})" />&#x2715
+				<td >
+					<span style="cursor:pointer;"  onclick="deleteGroup({{g.1}})" /><i class="fa fa-trash-o"></i>
 				</td>
 			</tr>
 			{% endfor %}
@@ -98,9 +142,9 @@
 		
 	 </div>		<!--  ===========GROUP TABLE DIV=============  -->
 	 
-			<a data-toggle="modal" href="#shortModal" class="myButton" ng-click="launch('create')" style="position:relative; top:0px; left:-200px; height:30px; width:120px;">create group</a>
+		<a data-toggle="modal" href="#shortModal" class="myButton" ng-click="launch('create')" style="position:relative; top:0px; left:-200px; height:30px; width:120px;">create group</a>
 
-		<p  style="position:relative; left:25px;"><font size="4">{{group_name}}</font></p>
+		<p data-toggle="modal" href="#shortModalDetailsGroup" ng-click="launch('create')" style="position:relative; left:25px;cursor:pointer;""><font size="4"><span >{{group_name}}</font></p>
 		<div class="mainbar" style="float:right; height:410px; width:560px; border-radius:15px; border:2px solid #d4d7dc;">
 			
 			<div id="innerChatDiv" class="innerChatDiv" style="height:310px; width:550px; position:relative; left:5px; top:5px; overflow: auto ">				
@@ -122,21 +166,11 @@
 					{% endfor %}
 				</table>
 			</div>
-		
-		
-		
-			
 			<div style="width:559px; height:1px; background-color:#d4d7dc; position:relative; top:15px;">
 			</div>
-		
 			<input id="description_add_to_the_group" type="text" placeholder="Description" size="40" style="position:relative; left:5px; top:19px; height:30px; border-radius:4px;  border-top:2px solid #d4d7dc; border-left:2px solid #d4d7dc;">
-		
 			<input id="url_add_to_the_group" type="url" placeholder="URL" size="60" style="position:relative; top:30px; left:5px; height:30px; border-width:2px; border-radius:4px; border-top:2px solid #d4d7dc; border-left:2px solid #d4d7dc;">
-		
-		
 			<a class="myButton" ng-click="launch('create')" style="position:relative; top:30px; left:20px; height:30px; width:70px;" onclick="addLinkGroup({{group_id}})">Send</a>
-
-		
 		</div>		<!--  ==============CHAT BOX================  -->
 		{% endblock %}
 		{% block leftmenu %}
